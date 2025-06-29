@@ -1,32 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Magical Spells</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spells - Wizarding World</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #0a0a0a, #7f0909);
+      color: #f7f2d9;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header, nav, footer {
+      background-color: rgba(0, 0, 0, 0.85);
+      width: 100%;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #ecb939; /* gold */
+      box-shadow: 0 0 15px #7f0909; /* scarlet glow */
+    }
+    nav a {
+      color: #ecb939;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      color: #d3a625;
+      text-decoration: underline;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      background-color: rgba(0, 0, 0, 0.9);
+      margin: 2rem 1rem 3rem;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #ecb939;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #ecb939;
+      text-shadow: 2px 2px 8px #7f0909;
+    }
+    ul.spell-list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.spell-list li {
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #2f4f4f, #0a0a0a);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 0 10px #4caf50; /* subtle emerald glow */
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    ul.spell-list li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ecb939, 0 0 20px #7f0909; /* gold and scarlet */
+    }
+    .spell-name {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #f0e68c; /* khaki/yellow */
+      text-shadow: 1px 1px 4px #4b4b4b;
+      margin-bottom: 0.3rem;
+    }
+    .spell-type {
+      font-style: italic;
+      font-size: 1rem;
+      color: #c0c0c0; /* silver */
+      margin-bottom: 0.6rem;
+    }
+    .spell-desc {
+      font-size: 1.1rem;
+      color: #f7f2d9;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Magical Spells</h1>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="characters.html">Characters</a>
-    <a href="spells.html">Spells</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <main>
-    <ul>
-      <li><strong>Lumos</strong> – Shine the tip of your wand</li>
-      <li><strong>Expelliarmus</strong> – Disarm your adversary</li>
-      <li><strong>Avada Kedavra</strong> – The Killing Curse (unforgivable!)</li>
-      <li><strong>Wingardium Leviosa</strong> – Levitate objects</li>
-    </ul>
-  </main>
-  <footer>
-    &copy; 2025 Wizarding World Fan Site.
-  </footer>
+
+<header>Wizarding World Fan Site</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="sorting-quiz.html">Sorting Quiz</a>
+  <a href="characters.html">Characters</a>
+  <a href="spells.html">Spells</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+</nav>
+
+<main>
+  <h1>Famous Wizarding Spells</h1>
+  <ul class="spell-list">
+    <li>
+      <div class="spell-name">Expelliarmus</div>
+      <div class="spell-type">Charm</div>
+      <div class="spell-desc">Disarms your opponent by forcing them to release whatever they are holding.</div>
+    </li>
+    <li>
+      <div class="spell-name">Stupefy</div>
+      <div class="spell-type">Charm (Stunning Spell)</div>
+      <div class="spell-desc">Stuns a target, rendering them unconscious temporarily.</div>
+    </li>
+    <li>
+      <div class="spell-name">Lumos</div>
+      <div class="spell-type">Charm</div>
+      <div class="spell-desc">Creates light at the tip of the caster's wand to illuminate dark areas.</div>
+    </li>
+    <li>
+      <div class="spell-name">Accio</div>
+      <div class="spell-type">Summoning Charm</div>
+      <div class="spell-desc">Summons objects towards the caster from a distance.</div>
+    </li>
+    <li>
+      <div class="spell-name">Protego</div>
+      <div class="spell-type">Shield Charm</div>
+      <div class="spell-desc">Creates a magical barrier to deflect spells and physical entities.</div>
+    </li>
+    <li>
+      <div class="spell-name">Alohomora</div>
+      <div class="spell-type">Unlocking Charm</div>
+      <div class="spell-desc">Unlocks doors and other locked objects.</div>
+    </li>
+    <li>
+      <div class="spell-name">Wingardium Leviosa</div>
+      <div class="spell-type">Charm</div>
+      <div class="spell-desc">Levitates objects, allowing the caster to move them through the air.</div>
+    </li>
+    <li>
+      <div class="spell-name">Sectumsempra</div>
+      <div class="spell-type">Dark Curse</div>
+      <div class="spell-desc">Causes deep slashing wounds on the target, bleeding profusely.</div>
+    </li>
+    <li>
+      <div class="spell-name">Expecto Patronum</div>
+      <div class="spell-type">Charm (Patronus Charm)</div>
+      <div class="spell-desc">Conjures a Patronus, a magical guardian that repels Dementors.</div>
+    </li>
+  </ul>
+</main>
+
+<footer>
+  &copy; 2025 Wizarding World Fan Site.
+</footer>
+
 </body>
 </html>
