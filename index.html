@@ -1,28 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Wizarding World - Home</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wizarding World Fanpage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      color: #f5f5f5;
+    }
+
+    header {
+      background: linear-gradient(45deg, gold, scarlet, emerald, silver, blue, bronze, yellow, black);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 4px solid gold;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .welcome {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .houses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .house {
+      flex: 1 1 200px;
+      padding: 1.5rem;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .house:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .gryffindor { background: linear-gradient(to bottom right, scarlet, gold); }
+    .slytherin  { background: linear-gradient(to bottom right, emerald, silver); }
+    .ravenclaw  { background: linear-gradient(to bottom right, blue, #b08d57); }
+    .hufflepuff { background: linear-gradient(to bottom right, yellow, black); }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #bbb;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Welcome to the Wizarding World</h1>
+    <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="characters.html">Characters</a>
-    <a href="spells.html">Spells</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+
   <main>
-    <h2>Explore the Magic</h2>
-    <p>Step into a world of enchantment—where witches, wizards, spells, and magical creatures await.</p>
+    <div class="welcome">
+      <p>From the hallowed halls of Hogwarts to the Forbidden Forest, this is your portal to all things magical.</p>
+    </div>
+
+    <div class="houses">
+      <a class="house gryffindor" href="gryffindor.html">🦁 Gryffindor</a>
+      <a class="house slytherin" href="slytherin.html">🐍 Slytherin</a>
+      <a class="house ravenclaw" href="ravenclaw.html">🦅 Ravenclaw</a>
+      <a class="house hufflepuff" href="hufflepuff.html">🦡 Hufflepuff</a>
+    </div>
   </main>
+
   <footer>
-    &copy; 2025 Wizarding World Fan Site.
+    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros.
   </footer>
+
 </body>
 </html>
