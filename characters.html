@@ -1,33 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Wizarding World Characters</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Characters - Wizarding World</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #1e1e1e, #3b3b3b);
+      color: #ecb939; /* Hogwarts Gold */
+      margin: 0;
+      padding: 0;
+    }
+    header, nav, footer {
+      background-color: rgba(20, 20, 20, 0.9);
+      text-align: center;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #ecb939;
+      box-shadow: 0 0 10px #946b2d;
+    }
+    nav a {
+      color: #ecb939;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #d3a625;
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: rgba(30, 30, 30, 0.95);
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #946b2d;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #ecb939;
+      text-shadow: 2px 2px 6px #7f0909;
+    }
+    section.house {
+      margin-bottom: 2rem;
+    }
+    section.house h2 {
+      border-bottom: 3px solid #ecb939;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #ecb939;
+      text-shadow: 1px 1px 3px #2c2c2c;
+    }
+    ul.characters-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    ul.characters-list li {
+      background-color: rgba(60, 60, 60, 0.85);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      width: 180px;
+      box-shadow: 0 0 10px #946b2d;
+      color: #f8f4e3;
+      font-weight: 600;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    ul.characters-list li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #d3a625;
+    }
+    /* House-specific colors for section titles */
+    .gryffindor h2 {
+      color: #ecb939;
+      border-color: #7f0909;
+      text-shadow: 1px 1px 4px #7f0909;
+    }
+    .slytherin h2 {
+      color: #c5c5c5;
+      border-color: #1a472a;
+      text-shadow: 1px 1px 4px #1a472a;
+    }
+    .ravenclaw h2 {
+      color: #946b2d;
+      border-color: #0e1a40;
+      text-shadow: 1px 1px 4px #0e1a40;
+    }
+    .hufflepuff h2 {
+      color: #000;
+      border-color: #ecb939;
+      text-shadow: 1px 1px 4px #ecb939;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Famous Characters</h1>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="characters.html">Characters</a>
-    <a href="spells.html">Spells</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <main>
-    <ul>
+
+<header>Wizarding World Fan Site</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="characters.html">Characters</a>
+  <a href="spells.html">Spells</a>
+  <a href="contact.html">Contact</a>
+  <a href="sorting-quiz.html">Sorting Quiz</a>
+</nav>
+
+<main>
+  <h1>Famous Hogwarts Characters</h1>
+  
+  <section class="house gryffindor">
+    <h2>Gryffindor</h2>
+    <ul class="characters-list">
       <li>Harry Potter</li>
       <li>Hermione Granger</li>
       <li>Ron Weasley</li>
       <li>Albus Dumbledore</li>
-      <li>Severus Snape</li>
+      <li>Minerva McGonagall</li>
     </ul>
-  </main>
-  <footer>
-    &copy; 2025 Wizarding World Fan Site.
-  </footer>
+  </section>
+
+  <section class="house slytherin">
+    <h2>Slytherin</h2>
+    <ul class="characters-list">
+      <li>Severus Snape</li>
+      <li>Draco Malfoy</li>
+      <li>Tom Riddle (Voldemort)</li>
+      <li>Bellatrix Lestrange</li>
+      <li>Horace Slughorn</li>
+    </ul>
+  </section>
+
+  <section class="house ravenclaw">
+    <h2>Ravenclaw</h2>
+    <ul class="characters-list">
+      <li>Luna Lovegood</li>
+      <li>Cho Chang</li>
+      <li>Filius Flitwick</li>
+      <li>Garrick Ollivander</li>
+      <li>Padma Patil</li>
+    </ul>
+  </section>
+
+  <section class="house hufflepuff">
+    <h2>Hufflepuff</h2>
+    <ul class="characters-list">
+      <li>Newt Scamander</li>
+      <li>Cedric Diggory</li>
+      <li>Nymphadora Tonks</li>
+      <li>Pomona Sprout</li>
+      <li>Ernie Macmillan</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Wizarding World Fan Site.
+</footer>
+
 </body>
 </html>
