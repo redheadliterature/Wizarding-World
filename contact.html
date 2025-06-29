@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Send Us an Owl</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -20,12 +20,26 @@
   </nav>
 
   <main>
-    <form>
-      <label for="name">Your Name:</label><br />
-      <input type="text" id="name" name="name" /><br /><br />
+    <h2>Have a Question or Message?</h2>
+    <p>Fill out the form below and our owls will deliver it straight to the right wizarding department.</p>
 
-      <label for="message">Message:</label><br />
-      <textarea id="message" name="message"></textarea><br /><br />
+    <form action="#" method="POST">
+      <label for="name">Your Name:</label><br />
+      <input type="text" id="name" name="name" placeholder="Luna Lovegood" required /><br /><br />
+
+      <label for="email">Your Owl Post Address (Email):</label><br />
+      <input type="email" id="email" name="email" placeholder="luna@hogwarts.edu" required /><br /><br />
+
+      <label for="house">Your House:</label><br />
+      <select id="house" name="house">
+        <option value="gryffindor">Gryffindor</option>
+        <option value="slytherin">Slytherin</option>
+        <option value="ravenclaw">Ravenclaw</option>
+        <option value="hufflepuff">Hufflepuff</option>
+      </select><br /><br />
+
+      <label for="message">Your Message:</label><br />
+      <textarea id="message" name="message" rows="5" placeholder="Dear Headmaster..." required></textarea><br /><br />
 
       <button type="submit">Send Owl</button>
     </form>
