@@ -13,7 +13,7 @@
     }
 
     header {
-      background: linear-gradient(45deg, gold, scarlet, emerald, silver, blue, bronze, yellow, black);
+      background: linear-gradient(45deg, gold, crimson, green, silver, navy, #b08d57, yellow, black);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -49,7 +49,7 @@
       color: white;
       font-weight: bold;
       text-decoration: none;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .house:hover {
@@ -57,10 +57,11 @@
       cursor: pointer;
     }
 
-    .gryffindor { background: linear-gradient(to bottom right, scarlet, gold); }
-    .slytherin  { background: linear-gradient(to bottom right, emerald, silver); }
-    .ravenclaw  { background: linear-gradient(to bottom right, blue, #b08d57); }
-    .hufflepuff { background: linear-gradient(to bottom right, yellow, black); }
+    /* House Colors */
+    .gryffindor { background: linear-gradient(to bottom right, crimson, gold); color: #fff; }
+    .slytherin  { background: linear-gradient(to bottom right, #1a472a, silver); color: #fff; }
+    .ravenclaw  { background: linear-gradient(to bottom right, navy, #b08d57); color: #fff; }
+    .hufflepuff { background: linear-gradient(to bottom right, gold, black); color: #000; }
 
     footer {
       text-align: center;
