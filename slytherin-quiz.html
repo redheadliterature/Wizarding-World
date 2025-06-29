@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Slytherin Quiz - Wizarding World</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  body {
+    background: linear-gradient(135deg, #1a472a, #aaaaaa);
+    color: #aaaaaa;
+  }
+  header, nav, footer {
+    background-color: rgba(26, 71, 42, 0.85);
+    color: #aaaaaa;
+    box-shadow: 0 0 15px #aaaaaa;
+  }
+  main {
+    background-color: rgba(26, 71, 42, 0.9);
+    color: #aaaaaa;
+  }
+  button {
+    background-color: #aaaaaa;
+    color: #1a472a;
+  }
+  button:hover {
+    background-color: #888888;
+  }
+  #result {
+    background-color: #aaaaaa;
+    color: #1a472a;
+    box-shadow: 0 0 10px #1a472a;
+  }
+</style>
+</head>
+<body>
+<header>Slytherin House Quiz</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="gryffindor-quiz.html">Gryffindor Quiz</a>
+  <a href="hufflepuff-quiz.html">Hufflepuff Quiz</a>
+  <a href="ravenclaw-quiz.html">Ravenclaw Quiz</a>
+  <a href="slytherin-quiz.html">Slytherin Quiz</a>
+</nav>
+<main>
+  <h1>Are You a True Slytherin?</h1>
+  <form id="quiz-form">
+    <div class="question">
+      <p>1. What motivates you the most?</p>
+      <label><input type="radio" name="q1" value="1" required> Ambition and success</label>
+      <label><input type="radio" name="q1" value="0"> Bravery</label>
+      <label><input type="radio" name="q1" value="0"> Loyalty</label>
+      <label><input type="radio" name="q1" value="0"> Intelligence</label>
+    </div>
+
+    <div class="question">
+      <p>2. How do you approach challenges?</p>
+      <label><input type="radio" name="q2" value="1" required> Strategically and with cunning</label>
+      <label><input type="radio" name="q2" value="0"> Head-on and bravely</label>
+      <label><input type="radio" name="q2" value="0"> Patiently and fairly</label>
+      <label><input type="radio" name="q2" value="0"> By analyzing carefully</label>
+    </div>
+
+    <div class="question">
+      <p>3. What is your greatest strength?</p>
+      <label><input type="radio" name="q3" value="1" required> Resourcefulness</label>
+      <label><input type="radio" name="q3" value="0"> Courage</label>
+      <label><input type="radio" name="q3" value="0"> Loyalty</label>
+      <label><input type="radio" name="q3" value="0"> Wisdom</label>
+    </div>
+
+    <div class="question">
+      <p>4. Which magical creature do you relate to?</p>
+      <label><input type="radio" name="q4" value="1" required> Basilisk</label>
+      <label><input type="radio" name="q4" value="0"> Phoenix</label>
+      <label><input type="radio" name="q4" value="0"> Niffler</label>
+      <label><input type="radio" name="q4" value="0"> Owl</label>
+    </div>
+
+    <div class="question">
+      <p>5. What do you admire most in others?</p>
+      <label><input type="radio" name="q5" value="1" required> Ambition and cunning</label>
+      <label><input type="radio" name="q5" value="0"> Bravery</label>
+      <label><input type="radio" name="q5" value="0"> Kindness</label>
+      <label><input type="radio" name="q5" value="0"> Intelligence</label>
+    </div>
+
+    <div class="question">
+      <p>6. How do you prefer to make decisions?</p>
+      <label><input type="radio" name="q6" value="1" required> Carefully planned for advantage</label>
+      <label><input type="radio" name="q6" value="0"> Quickly and boldly</label>
+      <label><input type="radio" name="q6" value="0"> With fairness</label>
+      <label><input type="radio" name="q6" value="0"> Based on knowledge</label>
+    </div>
+
+    <div class="question">
+      <p>7. Your favorite Hogwarts class?</p>
+      <label><input type="radio" name="q7" value="1" required> Potions</label>
+      <label><input type="radio" name="q7" value="0"> Defense Against the Dark Arts</label>
+      <label><input type="radio" name="q7" value="0"> Herbology</label>
+      <label><input type="radio" name="q7" value="0"> Charms</label>
+    </div>
+
+    <div class="question">
+      <p>8. How do you handle failure?</p>
+      <label><input type="radio" name="q8" value="1" required> Learn and adapt quickly</label>
+      <label><input type="radio" name="q8" value="0"> Face it bravely</label>
+      <label><input type="radio" name="q8" value="0"> Seek help</label>
+      <label><input type="radio" name="q8" value="0"> Reflect carefully</label>
+    </div>
+
+    <div class="question">
+      <p>9. Which trait best describes you?</p>
+      <label><input type="radio" name="q9" value="1" required> Ambitious</label>
+      <label><input type="radio" name="q9" value="0"> Brave</label>
+      <label><input type="radio" name="q9" value="0"> Kind</label>
+      <label><input type="radio" name="q9" value="0"> Wise</label>
+    </div>
+
+    <div class="question">
+      <p>10. What kind of friend are you?</p>
+      <label><input type="radio" name="q10" value="1" required> Loyal but competitive</label>
+      <label><input type="radio" name="q10" value="0"> Bold and supportive</label>
+      <label><input type="radio" name="q10" value="0"> Patient and kind</label>
+      <label><input type="radio" name="q10" value="0"> Thoughtful and curious</label>
+    </div>
+
+    <button type="submit">See Your Result</button>
+  </form>
+
+  <div id="result"></div>
+</main>
+<footer>&copy; 2025 Wizarding World Fan Site</footer>
+
+<script>
+  const form = document.getElementById('quiz-form');
+  const resultDiv = document.getElementById('result');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let score = 0;
+    for(let i=1; i<=10; i++) {
+      score += parseInt(form['q'+i].value);
+    }
+    let message = "";
+    if(score >= 8) {
+      message = "You are a TRUE Slytherin! Ambitious, cunning, and resourceful.";
+    } else if(score >= 5) {
+      message = "You have many Slytherin traits, but there’s room to grow.";
+    } else {
+      message = "You might not be a perfect Slytherin, but ambition can come in many forms!";
+    }
+    resultDiv.textContent = message;
+    resultDiv.className = "slytherin";
+  });
+</script>
+
+</body>
+</html>
