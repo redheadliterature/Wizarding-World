@@ -3,93 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About - Wizarding World</title>
+  <title>About the Wizarding World</title>
   <style>
     body {
       font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #000000, #2c2c2c);
-      color: #ecb939; /* Hogwarts Gold */
+      background: linear-gradient(135deg, #7f0909, #ecb939);
+      color: #fff8dc;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header, nav, footer {
-      background-color: rgba(31, 31, 31, 0.9);
-      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.75);
       text-align: center;
+      padding: 1rem 2rem;
       font-weight: bold;
-      font-size: 1.2rem;
       letter-spacing: 2px;
       color: #ecb939;
-      box-shadow: 0 0 10px #946b2d;
+      box-shadow: 0 0 15px #7f0909;
     }
     nav a {
       color: #ecb939;
-      text-decoration: none;
       margin: 0 1rem;
+      text-decoration: none;
       font-weight: 600;
+      font-size: 1.1rem;
     }
     nav a:hover {
       color: #d3a625;
       text-decoration: underline;
     }
     main {
-      max-width: 800px;
+      flex-grow: 1;
+      max-width: 900px;
       margin: 2rem auto;
-      background-color: rgba(47, 47, 47, 0.95);
-      padding: 2rem 3rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 2.5rem 3rem;
       border-radius: 12px;
-      box-shadow: 0 0 25px #946b2d;
+      box-shadow: 0 0 30px #ecb939;
+      line-height: 1.7;
     }
     h1 {
-      text-align: center;
       font-size: 3rem;
       margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 2px 2px 6px #4b0202;
       color: #ecb939;
-      text-shadow: 2px 2px 6px #7f0909;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #d3a625;
+      text-shadow: 1px 1px 4px #4b0202;
     }
     p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      color: #f8f4e3;
-      text-shadow: 1px 1px 3px #2c2c2c;
-    }
-    .houses {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .house {
-      background-color: #000000cc;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      margin: 1rem;
-      flex: 1 1 200px;
-      box-shadow: 0 0 15px #946b2d;
-      color: #f8f4e3;
-      font-weight: 600;
-      text-align: center;
-    }
-    .gryffindor {
-      border-top: 5px solid #7f0909; /* Scarlet */
-      border-bottom: 5px solid #ecb939; /* Gold */
-    }
-    .slytherin {
-      border-top: 5px solid #1a472a; /* Green */
-      border-bottom: 5px solid #c5c5c5; /* Silver */
-      color: #c5c5c5;
-    }
-    .ravenclaw {
-      border-top: 5px solid #0e1a40; /* Blue */
-      border-bottom: 5px solid #946b2d; /* Bronze */
-    }
-    .hufflepuff {
-      border-top: 5px solid #ecb939; /* Yellow */
-      border-bottom: 5px solid #000000; /* Black */
-      color: #000;
-      background-color: #ecb939cc;
-      box-shadow: 0 0 10px #000;
+      font-size: 1.25rem;
+      margin-bottom: 1.2rem;
+      color: #fff8dc;
+      text-shadow: 1px 1px 3px #7f0909;
     }
   </style>
 </head>
@@ -99,39 +71,40 @@
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="sorting-quiz.html">Sorting Quiz</a>
   <a href="characters.html">Characters</a>
   <a href="spells.html">Spells</a>
   <a href="contact.html">Contact</a>
-  <a href="sorting-quiz.html">Sorting Quiz</a>
+  <a href="about.html">About</a>
 </nav>
 
 <main>
-  <h1>About the Wizarding World Fan Site</h1>
-  <p>Welcome, witches and wizards, to this magical corner of the web dedicated to the enchanting world of Harry Potter! Here you can explore your favorite characters, learn spells, and even discover which Hogwarts house you belong to with our Sorting Quiz.</p>
-  
-  <p>This fan site is created with love by fellow Potterheads who cherish the magic, friendship, and adventures from J.K. Rowling's Wizarding World. Whether you’re a brave Gryffindor, a cunning Slytherin, a wise Ravenclaw, or a loyal Hufflepuff, there’s something here for everyone.</p>
-  
-  <p>Stay awhile and explore, cast a spell or two, and maybe send us a message with your own magical stories or questions!</p>
+  <h1>About the Wizarding World</h1>
 
-  <div class="houses">
-    <div class="house gryffindor">
-      <h2>Gryffindor</h2>
-      <p>Bravery, courage, and chivalry. Home to daring lions who face any challenge.</p>
-    </div>
-    <div class="house slytherin">
-      <h2>Slytherin</h2>
-      <p>Ambition, cunning, and resourcefulness. The house of the ambitious serpents.</p>
-    </div>
-    <div class="house ravenclaw">
-      <h2>Ravenclaw</h2>
-      <p>Wisdom, creativity, and wit. The house where knowledge and learning thrive.</p>
-    </div>
-    <div class="house hufflepuff">
-      <h2>Hufflepuff</h2>
-      <p>Loyalty, patience, and kindness. Home to the most dedicated badgers.</p>
-    </div>
-  </div>
+  <h2>What is the Wizarding World?</h2>
+  <p>
+    The Wizarding World is a hidden magical society coexisting alongside the non-magical (Muggle) world. It is home to witches, wizards, magical creatures, enchanted objects, and legendary places like Hogwarts School of Witchcraft and Wizardry.
+  </p>
+
+  <h2>Magic and Its Practice</h2>
+  <p>
+    Magic in this world is a powerful, mysterious force that can be harnessed through spells, potions, and magical artifacts. Witches and wizards develop their skills through formal education, primarily at Hogwarts, where they learn to cast spells, brew potions, and care for magical creatures.
+  </p>
+
+  <h2>Hogwarts and the Four Houses</h2>
+  <p>
+    Hogwarts is divided into four houses—Gryffindor, Slytherin, Ravenclaw, and Hufflepuff—each representing distinct traits like bravery, ambition, wisdom, and loyalty. Students are sorted into these houses based on their personalities and values, which shapes their experiences at school.
+  </p>
+
+  <h2>History and Lore</h2>
+  <p>
+    The Wizarding World has a rich history filled with legendary wizards, epic battles against dark forces, and magical discoveries. From the founders of Hogwarts to the tales of the Deathly Hallows, the lore inspires generations of witches and wizards to come.
+  </p>
+
+  <h2>Community and Culture</h2>
+  <p>
+    Beyond Hogwarts, the magical community has its own customs, government (the Ministry of Magic), sports (like Quidditch), and media. Though often secretive to protect themselves, witches and wizards deeply cherish friendship, bravery, and the pursuit of knowledge.
+  </p>
 </main>
 
 <footer>
