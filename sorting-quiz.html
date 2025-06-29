@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sorting Hat Quiz</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  main {
+    background: linear-gradient(to bottom, #0e1a40, #946b2d);
+    color: white;
+    padding: 2rem;
+    min-height: 80vh;
+  }
+  .question {
+    margin-bottom: 1.5rem;
+  }
+  label {
+    display: block;
+    margin: 0.3rem 0;
+    cursor: pointer;
+  }
+  button {
+    background-color: #ecb939;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: black;
+    color: yellow;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sorting Hat Quiz</h1>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="characters.html">Characters</a>
+  <a href="spells.html">Spells</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<main>
+  <form id="quizForm">
+    <div class="question">
+      <p><strong>1. Which quality do you value most?</strong></p>
+      <label><input type="radio" name="q1" value="Gryffindor" required> Bravery</label>
+      <label><input type="radio" name="q1" value="Slytherin"> Ambition</label>
+      <label><input type="radio" name="q1" value="Ravenclaw"> Intelligence</label>
+      <label><input type="radio" name="q1" value="Hufflepuff"> Loyalty</label>
+    </div>
+
+    <div class="question">
+      <p><strong>2. What would you do if a friend was in trouble?</strong></p>
+      <label><input type="radio" name="q2" value="Gryffindor" required> Stand by them no matter what</label>
+      <label><input type="radio" name="q2" value="Slytherin"> Find a clever way to solve it</label>
+      <label><input type="radio" name="q2" value="Ravenclaw"> Research all options first</label>
+      <label><input type="radio" name="q2" value="Hufflepuff"> Help patiently and kindly</label>
+    </div>
+
+    <div class="question">
+      <p><strong>3. Pick a magical creature:</strong></p>
+      <label><input type="radio" name="q3" value="Gryffindor" required> Phoenix</label>
+      <label><input type="radio" name="q3" value="Slytherin"> Basilisk</label>
+      <label><input type="radio" name="q3" value="Ravenclaw"> Owl</label>
+      <label><input type="radio" name="q3" value="Hufflepuff"> Badger</label>
+    </div>
+
+    <div class="question">
+      <p><strong>4. Which class do you prefer?</strong></p>
+      <label><input type="radio" name="q4" value="Gryffindor" required> Defense Against the Dark Arts</label>
+      <label><input type="radio" name="q4" value="Slytherin"> Potions</label>
+      <label><input type="radio" name="q4" value="Ravenclaw"> Charms</label>
+      <label><input type="radio" name="q4" value="Hufflepuff"> Herbology</label>
+    </div>
+
+    <button type="submit">Get Sorted!</button>
+  </form>
+</main>
+<footer>
+  &copy; 2025 Wizarding World Fan Site.
+</footer>
+
+<script>
+  const form = document.getElementById('quizForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    // Score tally
+    const scores = {
+      Gryffindor: 0,
+      Slytherin: 0,
+      Ravenclaw: 0,
+      Hufflepuff: 0
+    };
+
+    for (let [_, house] of formData) {
+      scores[house]++;
+    }
+
+    // Determine highest score
+    let maxScore = 0;
+    let sortedHouse = '';
+    for (const house in scores) {
+      if (scores[house] > maxScore) {
+        maxScore = scores[house];
+        sortedHouse = house;
+      }
+    }
+
+    // Redirect to house page
+    window.location.href = sortedHouse.toLowerCase() + '.html';
+  });
+</script>
+</body>
+</html>
