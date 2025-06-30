@@ -7,11 +7,36 @@
   <style>
     body {
       font-family: Georgia, serif;
-      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      background: linear-gradient(135deg, 
+        #990000,    /* Scarlet - Gryffindor */
+        #50C878,    /* Emerald - Slytherin */
+        #001F54,    /* Navy - Ravenclaw */
+        #FFD700     /* Gold - Hufflepuff */
+      );
       color: #f5f5f5;
       padding: 2rem;
       max-width: 700px;
       margin: auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    a#aboutLink {
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      color: #f0f0f0cc;
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-style: italic;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+    a#aboutLink:hover {
+      text-decoration: underline;
+      color: #ffffff;
     }
     h1 {
       text-align: center;
@@ -28,34 +53,46 @@
       display: block;
       margin-bottom: 0.5rem;
       cursor: pointer;
+      color: #f0f0f0;
+      user-select: none;
     }
     input[type="radio"] {
       margin-right: 0.5rem;
       cursor: pointer;
     }
     button {
-      background: linear-gradient(45deg, crimson, gold, green, navy);
+      background-color: aquamarine;
       border: none;
       border-radius: 10px;
       padding: 1rem 2rem;
       font-size: 1.25rem;
       font-weight: bold;
-      color: white;
+      color: #004d40; /* dark teal for contrast */
       cursor: pointer;
       margin-top: 2rem;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
-      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(127, 255, 212, 0.7);
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
-    button:hover {
+    button:hover:not(:disabled) {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.9);
+      background-color: #76eec6;
+      box-shadow: 0 8px 25px rgba(127, 255, 212, 0.9);
+    }
+    button:disabled {
+      cursor: default;
+      opacity: 0.7;
+      transform: none;
+      background-color: aquamarine;
+      box-shadow: none;
     }
   </style>
 </head>
 <body>
+
+  <a id="aboutLink" href="about.html">Not ready to choose? Learn more about Hogwarts and the Wizarding World.</a>
 
   <h1>Hogwarts Sorting Quiz</h1>
 
@@ -121,11 +158,12 @@
     <label><input type="radio" name="q10" value="hufflepuff" /> Work with others</label>
     <label><input type="radio" name="q10" value="ravenclaw" /> Think carefully and research</label>
 
-    <button type="submit">See Your House!</button>
+    <button type="submit" id="submitBtn">See Your House!</button>
   </form>
 
   <script>
     const form = document.getElementById('quizForm');
+    const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', function(event) {
       event.preventDefault();
@@ -139,7 +177,7 @@
 
       const answers = new FormData(form);
 
-      for (const [question, house] of answers.entries()) {
+      for (const [_, house] of answers.entries()) {
         if (scores.hasOwnProperty(house)) {
           scores[house]++;
         }
@@ -155,8 +193,19 @@
         }
       }
 
-      window.location.href = chosenHouse + '.html';
+      // Change button text & disable it to prevent multiple submits
+      submitBtn.textContent = `Congratulations, you belong in ${capitalize(chosenHouse)}!`;
+      submitBtn.disabled = true;
+
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = chosenHouse + '.html';
+      }, 3000);
     });
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
   </script>
 
 </body>
