@@ -5,18 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dedication - Wizarding World Fanpage</title>
   <style>
-    /* Body background */
+    /* Global Styles */
     body {
       margin: 0;
-      font-family: "Adobe Hebrew", serif;
-      background: #111;
+      font-family: "Georgia", serif;
+      background-color: #9E1B32; /* Scarlet */
       color: #f5f5f5;
       overflow-x: hidden;
       text-align: center;
-      padding: 2rem;
     }
 
-    /* Header style */
+    /* Animated Background */
+    @keyframes gradientShift {
+      0% { background-position: 100% 0; }
+      25% { background-position: 75% 0; }
+      50% { background-position: 50% 0; }
+      75% { background-position: 25% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* Upper Section Background (Animated Gradient) */
+    .upper-background {
+      background: linear-gradient(45deg, #9E1B32, #D6A800); /* Scarlet and Gold */
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease-in-out infinite;
+      padding: 4rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Header */
     header {
       color: white;
       padding: 2rem;
@@ -24,108 +41,128 @@
     }
 
     header h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 4px black;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     }
 
-    /* Message Style */
-    .message {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      box-shadow: 0 0 15px gold;
+    header p {
+      font-size: 1.3rem;
+      color: #f1c232; /* Gold */
     }
 
-    .message p {
-      line-height: 1.5;
-    }
-
-    /* Glowing border effect */
+    /* Golden Border */
     .gold-border {
-      margin-top: 3rem;
       border-top: 4px solid gold;
+      margin-top: 3rem;
     }
 
-    /* Button Styles */
+    /* Lower Section Background */
+    .lower-background {
+      background-color: #222;
+      padding: 5rem 2rem;
+      position: relative;
+      color: white;
+    }
+
+    /* Button Container and Button Styles */
     .button-container {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 2.5rem;
       margin-top: 3rem;
+      flex-wrap: wrap;
     }
 
     .button {
-      padding: 1.2rem 3rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
+      padding: 1rem 3rem;
       font-size: 1.2rem;
-      background: aquamarine;
-      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.5s ease;
-      box-shadow: 0 0 20px gold;
+      font-weight: bold;
+      color: #9E1B32; /* Scarlet */
+      background-color: #f1c232; /* Gold */
+      text-decoration: none;
+      border-radius: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 195, 0, 0.7);
     }
 
     .button:hover {
+      background-color: #d4af37;
       transform: scale(1.1);
-      cursor: pointer;
-      background-color: #00d6c9;
-      box-shadow: 0 0 30px gold;
+      box-shadow: 0 0 30px rgba(255, 195, 0, 1);
     }
 
     .button:active {
       transform: scale(1.05);
-      box-shadow: 0 0 40px #fff;
+      box-shadow: 0 0 35px rgba(255, 195, 0, 1);
     }
 
-    /* Footer */
+    /* Footer Section */
     footer {
+      background-color: #9E1B32; /* Scarlet */
+      color: #f1c232; /* Gold */
+      padding: 1.5rem;
       text-align: center;
-      padding: 1rem;
-      background-color: #111;
-      color: #bbb;
       font-size: 0.9rem;
-      border-top: 1px solid #444;
+      margin-top: 4rem;
+      border-top: 2px solid #f1c232;
     }
 
     footer a {
-      color: #bbb;
+      color: #f1c232;
       text-decoration: none;
-      font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
-      color: gold;
+      color: #d4af37;
     }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .button-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .lower-background {
+        padding: 3rem 2rem;
+      }
+    }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>This is for my Wonderful Little Sisters and Brother</h1>
-  </header>
-
-  <div class="message">
-    <p>
-      This website is dedicated to my amazing little sisters: Emp, Lyra, Ash, Deean, Piper, and Ali. 
-      It's also for Zeke, my wonderful, brave little brother. I love you all, and thank you for everything 
-      you've done for me. You are my inspiration, and I am so lucky to have you in my life.
-    </p>
+  <!-- Upper Background Section -->
+  <div class="upper-background">
+    <header>
+      <h1>Dedication</h1>
+      <p>This is for my wonderful little sisters: Emp, Lyra, Ash, Deean, Piper, and Ali. It's also for Zeke, my brave little bro. I love you all, and thank you for everything you've done for me.</p>
+    </header>
   </div>
 
-  <!-- Gold Border Section -->
+  <!-- Golden Border Section -->
   <div class="gold-border"></div>
 
-  <!-- Button Section -->
-  <div class="button-container">
-    <a href="index.html" class="button">Back to Homepage</a>
+  <!-- Lower Background Section with Buttons -->
+  <div class="lower-background">
+    <h2>Thank you all for being part of my life.</h2>
+    <p>And thanks, Ash, for knocking sense into me when I needed it.</p>
+
+    <!-- Buttons -->
+    <div class="button-container">
+      <a href="index.html" class="button">Back to Homepage</a>
+    </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer>
-    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros. | <a href="index.html">Back to Homepage</a>
+    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros. | <a href="dedication.html">Dedication</a>
   </footer>
 
 </body>
