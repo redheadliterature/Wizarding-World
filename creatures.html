@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Magical Creatures | Wizarding World Fanpage</title>
+  <title>Magical Creatures</title>
   <style>
-    /* Body background and theme */
+    /* General Styles */
     body {
       margin: 0;
       font-family: "Adobe Hebrew", serif;
       color: #f5f5f5;
-      background-color: #003300;
-      background-image: linear-gradient(to top right, #003300, #4c4c4c);
+      background-color: #2c2f3a;
       overflow-x: hidden;
     }
 
-    /* Header style */
     header {
-      color: white;
       padding: 2rem;
+      background-color: #1a2a36;
       text-align: center;
-      border-bottom: 4px solid silver;
+      color: #fff;
+      border-bottom: 4px solid #f5c32c;
     }
 
     header h1 {
@@ -28,41 +27,29 @@
       text-shadow: 2px 2px 4px black;
     }
 
-    /* Content Section */
-    .content {
-      padding: 2rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .content h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .creature-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
+    /* Glowing Borders for Blocks */
     .creature-block {
-      background-color: #4c4c4c;
+      margin: 2rem;
       padding: 1.5rem;
-      border-radius: 10px;
-      width: 200px;
-      height: 250px;
-      color: white;
-      font-size: 1.1rem;
-      box-shadow: 0 0 15px silver;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      background: #212d3b;
+      box-shadow: 0 0 20px 5px rgba(245, 195, 44, 0.8);
+      color: #f5f5f5;
+      transition: all 0.3s ease;
     }
 
     .creature-block:hover {
+      box-shadow: 0 0 25px 10px rgba(245, 195, 44, 0.9);
       transform: scale(1.05);
-      cursor: pointer;
-      box-shadow: 0 0 20px #b0c4de;
+    }
+
+    .creature-block h2 {
+      font-size: 2rem;
+      color: #f5c32c;
+    }
+
+    .creature-block p {
+      font-size: 1.2rem;
     }
 
     /* Footer */
@@ -74,39 +61,100 @@
       font-size: 0.9rem;
       border-top: 1px solid #444;
     }
+
   </style>
 </head>
 <body>
 
   <header>
     <h1>Magical Creatures</h1>
-    <p>Explore the mystical creatures of the wizarding world!</p>
+    <p>Explore the fascinating creatures of the Wizarding World!</p>
   </header>
 
-  <!-- Content Section -->
-  <div class="content">
-    <h2>Here are some of the most fascinating magical creatures!</h2>
-    <div class="creature-list">
-      <div class="creature-block">Phoenix</div>
-      <div class="creature-block">Hippogriff</div>
-      <div class="creature-block">Centaur</div>
-      <div class="creature-block">Basilisk</div>
-      <div class="creature-block">Dragon</div>
-      <div class="creature-block">Thestral</div>
-      <div class="creature-block">Merpeople</div>
-      <div class="creature-block">Griffin</div>
-      <div class="creature-block">Niffler</div>
-      <div class="creature-block">Acromantula</div>
-      <div class="creature-block">House Elf</div>
-      <div class="creature-block">Hippogriff</div>
-      <div class="creature-block">Veela</div>
-      <div class="creature-block">Kneazle</div>
-      <div class="creature-block">Fwooper</div>
-      <div class="creature-block">Centaurs</div>
-      <div class="creature-block">Troll</div>
-      <div class="creature-block">Bowtruckle</div>
-      <div class="creature-block">Blast-Ended Skrewt</div>
-    </div>
+  <!-- Creatures List -->
+  <div class="creature-block">
+    <h2>Phoenix</h2>
+    <p>The Phoenix is a magical bird that is immortal, known for its ability to regenerate. When it dies, it bursts into flames and is reborn from its ashes. The Phoenix is also associated with healing powers and has powerful tears that can heal wounds.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Hippogriff</h2>
+    <p>The Hippogriff is a majestic creature with the body of a horse and the head of an eagle. It is proud and noble, and it requires respect from anyone who interacts with it. A Hippogriff will bow to someone who bows to it first, but if disrespected, it can attack with its sharp talons.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Dragon</h2>
+    <p>Dragons are large, fire-breathing creatures that are known to be fierce and highly dangerous. There are several species of dragons in the Wizarding World, including the Hungarian Horntail, the Chinese Fireball, and the Norwegian Ridgeback. They are highly prized for their magical properties and are often used in potion-making.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Thestral</h2>
+    <p>Thestrals are magical creatures that are visible only to those who have witnessed death and truly understood its meaning. They are skeletal, winged horses with black leathery wings. While they are generally misunderstood, Thestrals are gentle and helpful, particularly in carrying heavy loads or pulling carriages.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>House-Elf</h2>
+    <p>House-elves are small, humanoid creatures who serve wizarding families. They possess great magical abilities but are bound to serve their masters with absolute loyalty. They are often treated unfairly, and their freedom is typically restricted, though some elves, like Dobby, have gained their freedom and live independent lives.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Acromantula</h2>
+    <p>The Acromantula is a giant, carnivorous spider that is native to the rainforests of Brazil. It can grow up to 15 feet in length and is extremely dangerous. Acromantulas are intelligent and can communicate with humans, though they are typically hostile and unpredictable.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Blast-Ended Skrewt</h2>
+    <p>The Blast-Ended Skrewt is a magical creature that was bred by Hagrid by crossing a fire crab with a giant squid. They are large, aggressive creatures with a sting capable of blasting fire. They are hard to control and highly dangerous, often attacking with little provocation.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Grindylow</h2>
+    <p>The Grindylow is a water demon from the black lakes of the British Isles. It is a dangerous creature with long, sharp claws and a fierce temper. Grindylows are known for attacking swimmers and boats, though they are more commonly found in dark, murky waters.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Basilisk</h2>
+    <p>The Basilisk is a giant serpent, known as the King of Serpents, whose gaze can kill anyone who looks directly into its eyes. It is bred by dark wizards to guard treasures, and it can be controlled by Parseltongue, the ability to speak to snakes. A Basilisk's venom is incredibly potent, and its skin is highly resistant to magical spells.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Merpeople</h2>
+    <p>Merpeople are aquatic creatures that inhabit large bodies of water, such as lakes and seas. They resemble humans with fish-like tails and are often seen as dangerous due to their territorial nature. Merpeople have a deep, melodic singing voice, and they are skilled in underwater magic.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Firenze (Centaur)</h2>
+    <p>Firenze is a centaur who was once a part of the Forbidden Forest's centaur herd. Centaurs are half-human, half-horse creatures that are known for their advanced knowledge of astronomy, magic, and prophecy. They are extremely prideful and have their own code of honor, which often leads to conflicts with wizards.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Inferi</h2>
+    <p>Inferi are reanimated corpses created through dark magic. They are used by dark wizards to carry out tasks against their will. Inferi are impervious to most spells and can only be repelled by fire or light, which makes them a dangerous tool for dark wizards.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Kneazle</h2>
+    <p>The Kneazle is a magical feline creature known for its intelligence and independent nature. It has the ability to detect suspicious or untrustworthy individuals, and it is often used as a pet by witches and wizards. Kneazles are related to cats but have distinctive features, such as tufted ears and a tail similar to a lion's.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Veela</h2>
+    <p>Veelas are beautiful, magical creatures who can captivate men with their enchanting beauty and hypnotic dancing. However, when angered, they can transform into monstrous bird-like creatures with the ability to conjure fireballs. They are commonly seen in the Bulgarian Quidditch team as their mascots.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Fwooper</h2>
+    <p>The Fwooper is a brightly colored bird native to Africa. It has the ability to drive its listeners insane with its beautiful song, making it dangerous to keep as a pet. Fwoopers must be enchanted to prevent their song from driving anyone nearby mad.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Yeti</h2>
+    <p>The Yeti is a large, ape-like creature that dwells in the snowy mountains of the Himalayas. It is a reclusive creature and is rarely seen by humans. The Yeti is strong and agile, and it has a deep, growling roar that can be heard over long distances in the mountains.</p>
+  </div>
+
+  <div class="creature-block">
+    <h2>Pixie</h2>
+    <p>Pixies are small, mischievous creatures that enjoy causing chaos and pranks. They are typically blue in color and are known for their ability to fly. Pixies are not inherently dangerous, but they can be a nuisance when they decide to get into trouble.</p>
   </div>
 
   <!-- Footer -->
