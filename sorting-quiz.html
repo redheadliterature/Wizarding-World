@@ -8,30 +8,42 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: #f8f5e0; /* parchment tone */
-      color: #2e2e2e;
+      background: #0d1a14; /* Dark green background */
+      color: #f5f5f5;
       padding: 2rem;
     }
 
     .container {
       max-width: 800px;
       margin: auto;
+      background: rgba(18, 61, 36, 0.9); /* Emerald tone with opacity */
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(192, 192, 192, 0.7); /* Soft glowing silver */
     }
 
     h1 {
       text-align: center;
       font-size: 2.5rem;
-      color: #1a472a;
+      color: #c0c0c0;
       margin-bottom: 2rem;
+      text-shadow: 1px 1px #000;
     }
 
     .question-block {
-      background: linear-gradient(to right, #1a472a, #bfdc8f);
-      color: #fff;
+      background: #123d24;
+      border: 2px solid #ccc;
       border-radius: 10px;
-      padding: 1rem 1.5rem;
+      padding: 1.5rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      color: #e5e5e5;
+      box-shadow: 0 0 10px rgba(192,192,192,0.8);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .question-block:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(255,255,255,0.9);
     }
 
     .question-block p {
@@ -82,6 +94,7 @@
     <h1>Hogwarts Sorting Quiz</h1>
     <form id="quizForm">
 
+      <!-- 10 Questions -->
       <div class="question-block">
         <p>1. What do you value most?</p>
         <label><input type="radio" name="q1" value="gryffindor" required> Bravery</label>
