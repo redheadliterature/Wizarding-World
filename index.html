@@ -10,166 +10,123 @@
       margin: 0;
       font-family: 'Arial', sans-serif;
       color: #fff;
-      background-color: #f5f5f5;
+      background: linear-gradient(45deg, #1e3d5a, #f1c232);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       overflow-x: hidden;
     }
 
-    /* Main container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
+    /* Animation for gradient background */
+    @keyframes gradientAnimation {
+      0% { background-position: 100% 50%; }
+      50% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
-    /* Header styling */
+    /* Header Styling */
     header {
       text-align: center;
       padding: 2rem;
-      background: #2c3e50;
-      color: #ecf0f1;
+      background-color: #003366;
+      color: #f1c232;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 3rem;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
+      text-shadow: 0 0 15px #f1c232, 0 0 30px #f1c232;
     }
 
     header p {
       font-size: 1.5rem;
+      margin-top: 1rem;
     }
 
-    /* Grid Layout */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    /* Button Container */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
       margin-top: 3rem;
     }
 
-    .grid div {
-      background: #ecf0f1;
-      color: #2c3e50;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .grid div:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .grid div h3 {
-      font-size: 2rem;
-    }
-
-    .grid div p {
-      font-size: 1.2rem;
-    }
-
-    /* Glowing button styles */
-    .button-container {
-      text-align: center;
-      margin-top: 4rem;
-    }
-
+    /* Glowing Button Styles */
     .button {
       display: inline-block;
       padding: 1.2rem 3rem;
       font-size: 1.3rem;
-      text-decoration: none;
-      background-color: #2980b9;
       color: #fff;
+      text-decoration: none;
       font-weight: bold;
+      background-color: #f1c232;
       border-radius: 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      box-shadow: 0 0 20px #f1c232, 0 0 30px #f1c232;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.5s ease;
     }
 
     .button:hover {
-      background-color: #3498db;
-      transform: scale(1.05);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      background-color: #d4af37;
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #f1c232, 0 0 40px #d4af37;
     }
 
     .button:active {
       transform: scale(1);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 40px #fff;
     }
 
     /* Footer Styling */
     footer {
       text-align: center;
-      padding: 1rem 0;
-      background-color: #2c3e50;
-      color: #bbb;
-      font-size: 0.9rem;
-      border-top: 1px solid #444;
+      padding: 1rem;
+      background-color: #003366;
+      color: #f1c232;
+      font-size: 1rem;
+      border-top: 2px solid #f1c232;
+      margin-top: 5rem;
     }
 
     footer a {
-      color: #bbb;
+      color: #f1c232;
       text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
-      color: #ecf0f1;
+      color: #d4af37;
     }
 
     /* Responsive Design for mobile */
     @media screen and (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
+      .button-container {
+        flex-direction: column;
       }
     }
+
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- Main Content Section -->
+  <header>
+    <h1>Welcome to the Wizarding World</h1>
+    <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
+  </header>
 
-    <!-- Header Section -->
-    <header>
-      <h1>Welcome to the Wizarding World</h1>
-      <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
-    </header>
-
-    <!-- Grid Section -->
-    <div class="grid">
-      <!-- Hogwarts Block -->
-      <div>
-        <h3>Hogwarts School</h3>
-        <p>Where witches and wizards learn magic, and the four houses unite under one roof. Explore the legacy and magic of Hogwarts.</p>
-      </div>
-
-      <!-- Beauxbatons Block -->
-      <div>
-        <h3>Beauxbatons Academy</h3>
-        <p>Elegant and graceful, Beauxbatons in France is known for its charm and class, focusing on refined and artistic magic.</p>
-      </div>
-
-      <!-- Durmstrang Block -->
-      <div>
-        <h3>Durmstrang Institute</h3>
-        <p>Located in the cold, northern lands, Durmstrang is famous for its rigorous martial magic training and producing formidable wizards.</p>
-      </div>
-    </div>
-
-    <!-- Button Section -->
-    <div class="button-container">
-      <a href="sorting-quiz.html" class="button">Get Sorted Into Your House</a>
-      <a href="menupage.html" class="button">Explore the Wizarding World</a>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-      &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros. | <a href="dedication.html">Dedication</a>
-    </footer>
-
+  <!-- Buttons Section -->
+  <div class="button-container">
+    <a href="sorting-quiz.html" class="button">Get Sorted Into Your House</a>
+    <a href="menupage.html" class="button">Explore the Wizarding World</a>
   </div>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros. | <a href="dedication.html">Dedication</a>
+  </footer>
 
 </body>
 </html>
