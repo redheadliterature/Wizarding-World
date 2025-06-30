@@ -13,6 +13,7 @@
       overflow-x: hidden;
     }
 
+    /* Header with color changing text */
     header {
       background: linear-gradient(45deg, gold, crimson, green, silver, navy, #b08d57, yellow, black);
       color: white;
@@ -24,6 +25,75 @@
     header h1 {
       font-size: 3rem;
       text-shadow: 2px 2px 4px black;
+      animation: colorChange 5s infinite;
+    }
+
+    /* Animation for header text color change */
+    @keyframes colorChange {
+      0% { color: red; }
+      25% { color: blue; }
+      50% { color: green; }
+      75% { color: yellow; }
+      100% { color: red; }
+    }
+
+    /* Floating Candles Animation */
+    .candles-container {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: floatCandles 10s ease-in-out infinite;
+    }
+
+    .candle {
+      width: 20px;
+      height: 60px;
+      background-color: #f7f0c5;
+      border-radius: 50%;
+      box-shadow: 0 0 10px yellow, 0 0 20px yellow;
+      animation: candleFloat 4s infinite;
+    }
+
+    .candle:before {
+      content: "";
+      width: 10px;
+      height: 20px;
+      background-color: yellow;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      animation: flicker 0.1s infinite alternate;
+    }
+
+    /* Candle floating animation */
+    @keyframes candleFloat {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Flickering candle flame */
+    @keyframes flicker {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0.6;
+        transform: scale(1.1);
+      }
     }
 
     main {
@@ -36,35 +106,59 @@
       margin-bottom: 2rem;
     }
 
-    .button-container {
+    .houses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .house {
+      flex: 1 1 200px;
+      padding: 1.5rem;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .house:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    /* House Colors */
+    .gryffindor { background: linear-gradient(to bottom right, crimson, gold); color: #fff; }
+    .slytherin  { background: linear-gradient(to bottom right, #1a472a, silver); color: #fff; }
+    .ravenclaw  { background: linear-gradient(to bottom right, navy, #b08d57); color: #fff; }
+    .hufflepuff { background: linear-gradient(to bottom right, gold, black); color: #000; }
+
+    .explore-button-container, .house-buttons-container {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
       margin-top: 2rem;
     }
 
-    .button {
+    .explore-button, .house-buttons-container a {
       padding: 1rem 3rem;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       color: #fff;
       font-size: 1.2rem;
+      background: linear-gradient(45deg, #b10000, #e5e5e5);
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .button:hover {
+    .explore-button:hover, .house-buttons-container a:hover {
       transform: scale(1.1);
       cursor: pointer;
     }
 
-    /* Button Styles */
-    .choose-house {
-      background: linear-gradient(45deg, crimson, gold);
-    }
-
-    .explore-world {
+    .explore-button {
       background: linear-gradient(45deg, #b10000, #e5e5e5);
+      box-shadow: 0 0 15px gold;
     }
 
     footer {
@@ -84,14 +178,27 @@
     <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
   </header>
 
+  <!-- Floating Candles -->
+  <div class="candles-container">
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+  </div>
+
   <main>
     <div class="welcome">
       <p>From the hallowed halls of Hogwarts to the Forbidden Forest, this is your portal to all things magical.</p>
     </div>
 
-    <div class="button-container">
-      <a href="sorting-quiz.html" class="button choose-house">Click here to choose your house!</a>
-      <a href="creatures.html" class="button explore-world">Explore the Wizarding World!</a>
+    <div class="houses">
+      <a class="house gryffindor" href="gryffindor.html">🦁 Gryffindor</a>
+      <a class="house slytherin" href="slytherin.html">🐍 Slytherin</a>
+      <a class="house ravenclaw" href="ravenclaw.html">🦅 Ravenclaw</a>
+      <a class="house hufflepuff" href="hufflepuff.html">🦡 Hufflepuff</a>
+    </div>
+
+    <div class="explore-button-container">
+      <a href="explore.html" class="explore-button">Explore the Wizarding World!</a>
     </div>
   </main>
 
