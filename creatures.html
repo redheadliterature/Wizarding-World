@@ -6,142 +6,95 @@
   <title>Magical Creatures | Wizarding World Fan Site</title>
   <style>
     body {
-      font-family: "Adobe Hebrew", "Arial Hebrew", Arial, sans-serif;
-      background: #f0f0f0;
-      color: #333;
-      margin: 2rem;
-      line-height: 1.6;
+      margin: 0;
+      font-family: "Adobe Hebrew", serif;
+      background: radial-gradient(ellipse at bottom, #0a1a2f 0%, #000 100%);
+      color: #f5f5f5;
+      overflow-x: hidden;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 1.5rem;
-      color: #2e3d49;
+      padding: 2rem;
+      color: #cceeff;
+      text-shadow: 2px 2px 6px #000;
     }
+
     .creature {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #ccc;
+      background: rgba(0, 80, 40, 0.8);
+      border: 2px solid silver;
+      box-shadow: 0 0 15px #99ffcc;
+      border-radius: 10px;
+      margin: 1.5rem auto;
+      padding: 1rem 1.5rem;
+      max-width: 800px;
     }
+
     .creature h2 {
-      margin: 0;
-      color: #005b5b;
+      margin-top: 0;
+      color: #aaffee;
+      font-size: 1.6rem;
     }
+
     .creature p {
-      margin: 0.25rem 0;
+      margin: 0.5rem 0 0;
+      color: #e0f7fa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Snow effect */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
+
   <h1>20 Magical Creatures of the Wizarding World</h1>
 
-  <div class="creature">
-    <h2>Phoenix</h2>
-    <p>Immortal crimson-and-gold bird reborn from ashes; tears heal, song inspires, and it can teleport. Dumbledore’s Fawkes saved Harry and heals with his tears. :contentReference[oaicite:1]{index=1}</p>
-  </div>
+  <!-- Your 20 creature blocks go here (see previous message for content) -->
 
-  <div class="creature">
-    <h2>Hippogriff</h2>
-    <p>Half‑eagle, half‑horse; proud and brave. Buckbeak was introduced in Hagrid’s class, and must be bowed to before approach. :contentReference[oaicite:2]{index=2}</p>
-  </div>
+  <footer>
+    &copy; 2025 Wizarding World Fan Site
+  </footer>
 
-  <div class="creature">
-    <h2>Basilisk</h2>
-    <p>Giant king‑serpent hatched from a chicken’s egg under a toad; direct eye contact kills, indirect petrifies. Hidden in Chamber of Secrets. :contentReference[oaicite:3]{index=3}</p>
-  </div>
+  <script>
+    // Snowflake generator
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      const size = Math.random() * 5 + 2;
+      snowflake.style.width = `${size}px`;
+      snowflake.style.height = `${size}px`;
+      snowflake.style.left = `${Math.random() * window.innerWidth}px`;
+      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      document.body.appendChild(snowflake);
+      setTimeout(() => snowflake.remove(), 7000);
+    }
 
-  <div class="creature">
-    <h2>Acromantula</h2>
-    <p>Gigantic, talking spider—Aragog lived in the Forbidden Forest; eight‑footer with venomous bite. :contentReference[oaicite:4]{index=4}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Thestral</h2>
-    <p>Winged, skeletal‑looking horses visible only after seeing death; gentle, used to pull Hogwarts carriages. :contentReference[oaicite:5]{index=5}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Unicorn</h2>
-    <p>White horse‑like creature with a healing horn; unicorn blood sustains life but at a price. Foals are gold turning silver‑white. :contentReference[oaicite:6]{index=6}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Centaurs</h2>
-    <p>Half‑horse, half‑human; highly intelligent, skilled at healing and astrology, live in Forbidden Forest. :contentReference[oaicite:7]{index=7}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Merpeople</h2>
-    <p>Aquatic humanoids in the Black Lake; speak Mermish, participated in Triwizard Tournament task. :contentReference[oaicite:8]{index=8}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Dragon</h2>
-    <p>Massive, fire‑breathing reptiles. Breeds include Hungarian Horntail, Norbert (Norwegian Ridgeback), and Chinese Fireball. :contentReference[oaicite:9]{index=9}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Bowtruckle</h2>
-    <p>Small twig‑like guardian of wand‑row trees; loyal to trees, used in Care of Magical Creatures. :contentReference[oaicite:10]{index=10}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Niffler</h2>
-    <p>Small, long‑snouted, attracted to shiny objects; often steals coins. :contentReference[oaicite:11]{index=11}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Mandrake</h2>
-    <p>Potion‑augmenting root‑creature whose cry can be fatal; used to revive petrified victims. :contentReference[oaicite:12]{index=12}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Erumpent</h2>
-    <p>Huge rhino‑like beast whose horn contains explosive fluid; highly dangerous. :contentReference[oaicite:13]{index=13}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Sphinx</h2>
-    <p>Human‑headed, lion‑bodied, winged creature; guards crypts and riddles travellers in the Triwizard maze. :contentReference[oaicite:14]{index=14}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Augurey</h2>
-    <p>Also called the “Irish Phoenix”; green‑black vulture‑like bird whose cry foretells rain, not death. :contentReference[oaicite:15]{index=15}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Fairy</h2>
-    <p>Tiny winged humanoids first mentioned in Prisoner of Azkaban; sometimes used as Christmas tree decorations. :contentReference[oaicite:16]{index=16}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Grindylow</h2>
-    <p>Water demon with hooked fingers; taught in DADA class in Prisoner, lives in Hogwarts lake. :contentReference[oaicite:17]{index=17}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Ashwinder</h2>
-    <p>Slender, pale‑grey serpent born from magical fires; lives only an hour before its eggs hatch and it dies. :contentReference[oaicite:18]{index=18}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Bicorn</h2>
-    <p>Cow‑like creature with two horns, shed annually. Horns are used in potion‑making. :contentReference[oaicite:19]{index=19}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Billywig</h2>
-    <p>Small, sapphire‑blue insect from Australia; its sting causes giddiness and levitation. :contentReference[oaicite:20]{index=20}</p>
-  </div>
-
-  <div class="creature">
-    <h2>Unicorn</h2> <!-- duplicate remove? already included; use another, e.g., Hippocampus -->
-  </div>
-
-  <div class="creature">
-    <h2>Hippocampus</h2>
-    <p>Sea‑horse with front of a horse and tail of a fish; lives in the Great Lake and breeds from eggs. :contentReference[oaicite:21]{index=21}</p>
-  </div>
-
+    setInterval(createSnowflake, 150);
+  </script>
 </body>
 </html>
