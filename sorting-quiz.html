@@ -1,227 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sorting Quiz - Wizarding World</title>
+  <meta charset="UTF-8">
+  <title>Hogwarts Sorting Quiz</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #001f4d, #ecb939);
-      color: #fff8dc;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    header, nav, footer {
-      background-color: rgba(0, 0, 0, 0.75);
-      width: 100%;
-      text-align: center;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: #ecb939;
-      box-shadow: 0 0 15px #7f0909;
-    }
-    nav a {
-      color: #ecb939;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      color: #d3a625;
-      text-decoration: underline;
-    }
-    main {
-      flex-grow: 1;
-      max-width: 700px;
-      background-color: rgba(0, 0, 0, 0.85);
-      margin: 2rem 1rem 3rem;
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #ecb939;
-      color: #fff8dc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
     }
     h1 {
       text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #ecb939;
-      text-shadow: 2px 2px 6px #001f4d;
-    }
-    form {
-      margin-top: 1.5rem;
+      color: #5a2a83;
     }
     .question {
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
-    label {
-      display: block;
-      margin: 0.3rem 0;
-      cursor: pointer;
-      font-size: 1.1rem;
+    .question h3 {
+      color: #333;
     }
-    input[type="radio"] {
-      margin-right: 0.6rem;
-      accent-color: #ecb939; /* gold accent for radio buttons */
+    .result {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #e0e0e0;
+      font-weight: bold;
+      font-size: 1.2em;
     }
     button {
-      background-color: #007a3d; /* emerald green */
-      color: #fff8dc;
+      padding: 10px 20px;
+      background-color: #5a2a83;
+      color: white;
       border: none;
-      padding: 0.8rem 2rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 8px;
       cursor: pointer;
-      margin-top: 1.5rem;
-      box-shadow: 0 0 10px #007a3d;
-      transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #004d24;
-    }
-    #result {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-align: center;
-    }
-    /* House colors for results */
-    .gryffindor {
-      background-color: #7f0909; /* scarlet */
-      box-shadow: 0 0 15px #ecb939;
-      color: #ecb939;
-    }
-    .hufflepuff {
-      background-color: #ecb939; /* gold */
-      box-shadow: 0 0 15px #7f0909;
-      color: #7f0909;
-    }
-    .ravenclaw {
-      background-color: #001f4d; /* navy */
-      box-shadow: 0 0 15px #ecb939;
-      color: #ecb939;
-    }
-    .slytherin {
-      background-color: #007a3d; /* emerald */
-      box-shadow: 0 0 15px #ecb939;
-      color: #ecb939;
+      background-color: #6c3fb2;
     }
   </style>
 </head>
 <body>
 
-<header>Wizarding World Fan Site</header>
+  <h1>Hogwarts Sorting Quiz</h1>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="sorting-quiz.html">Sorting Quiz</a>
-  <a href="characters.html">Characters</a>
-  <a href="spells.html">Spells</a>
-  <a href="contact.html">Contact</a>
-  <a href="about.html">About</a>
-</nav>
-
-<main>
-  <h1>Choose Your Hogwarts House</h1>
-  <form id="quiz-form">
+  <form id="quizForm">
+    <!-- Question Template -->
     <div class="question">
-      1. What trait do you value most?
-      <label><input type="radio" name="q1" value="Gryffindor" required /> Bravery</label>
-      <label><input type="radio" name="q1" value="Slytherin" /> Ambition</label>
-      <label><input type="radio" name="q1" value="Ravenclaw" /> Intelligence</label>
-      <label><input type="radio" name="q1" value="Hufflepuff" /> Loyalty</label>
+      <h3>1. What motivates you the most?</h3>
+      <label><input type="radio" name="q1" value="Slytherin"> Achieving greatness and recognition</label><br>
+      <label><input type="radio" name="q1" value="Ravenclaw"> Gaining knowledge and understanding</label><br>
+      <label><input type="radio" name="q1" value="Hufflepuff"> Helping others and being loyal</label><br>
+      <label><input type="radio" name="q1" value="Gryffindor"> Standing up for what's right</label>
     </div>
 
     <div class="question">
-      2. Which animal do you identify with?
-      <label><input type="radio" name="q2" value="Gryffindor" required /> Lion</label>
-      <label><input type="radio" name="q2" value="Slytherin" /> Snake</label>
-      <label><input type="radio" name="q2" value="Ravenclaw" /> Eagle</label>
-      <label><input type="radio" name="q2" value="Hufflepuff" /> Badger</label>
+      <h3>2. Which magical creature do you feel most connected to?</h3>
+      <label><input type="radio" name="q2" value="Slytherin"> Basilisk</label><br>
+      <label><input type="radio" name="q2" value="Ravenclaw"> Phoenix</label><br>
+      <label><input type="radio" name="q2" value="Hufflepuff"> Niffler</label><br>
+      <label><input type="radio" name="q2" value="Gryffindor"> Hippogriff</label>
     </div>
 
     <div class="question">
-      3. Which subject at Hogwarts would you enjoy most?
-      <label><input type="radio" name="q3" value="Ravenclaw" required /> Charms & Wisdom</label>
-      <label><input type="radio" name="q3" value="Slytherin" /> Dark Arts & Strategy</label>
-      <label><input type="radio" name="q3" value="Hufflepuff" /> Herbology & Care</label>
-      <label><input type="radio" name="q3" value="Gryffindor" /> Defense Against the Dark Arts</label>
+      <h3>3. What’s your ideal way to spend a free afternoon?</h3>
+      <label><input type="radio" name="q3" value="Slytherin"> Strategizing your next big goal</label><br>
+      <label><input type="radio" name="q3" value="Ravenclaw"> Solving a puzzle or reading</label><br>
+      <label><input type="radio" name="q3" value="Hufflepuff"> Spending time with loved ones</label><br>
+      <label><input type="radio" name="q3" value="Gryffindor"> Exploring or adventuring</label>
     </div>
 
     <div class="question">
-      4. What motivates you?
-      <label><input type="radio" name="q4" value="Slytherin" required /> Power and Influence</label>
-      <label><input type="radio" name="q4" value="Gryffindor" /> Courage and Doing What's Right</label>
-      <label><input type="radio" name="q4" value="Hufflepuff" /> Helping Others</label>
-      <label><input type="radio" name="q4" value="Ravenclaw" /> Knowledge and Discovery</label>
+      <h3>4. Which subject at Hogwarts would you enjoy most?</h3>
+      <label><input type="radio" name="q4" value="Slytherin"> Potions</label><br>
+      <label><input type="radio" name="q4" value="Ravenclaw"> Charms</label><br>
+      <label><input type="radio" name="q4" value="Hufflepuff"> Herbology</label><br>
+      <label><input type="radio" name="q4" value="Gryffindor"> Defense Against the Dark Arts</label>
     </div>
 
-    <button type="submit">Find My House</button>
+    <div class="question">
+      <h3>5. How would your friends describe you?</h3>
+      <label><input type="radio" name="q5" value="Slytherin"> Ambitious and clever</label><br>
+      <label><input type="radio" name="q5" value="Ravenclaw"> Intelligent and curious</label><br>
+      <label><input type="radio" name="q5" value="Hufflepuff"> Kind and dependable</label><br>
+      <label><input type="radio" name="q5" value="Gryffindor"> Brave and bold</label>
+    </div>
+
+    <div class="question">
+      <h3>6. You find a wallet full of galleons. What do you do?</h3>
+      <label><input type="radio" name="q6" value="Slytherin"> Keep it</label><br>
+      <label><input type="radio" name="q6" value="Ravenclaw"> Investigate who it belongs to</label><br>
+      <label><input type="radio" name="q6" value="Hufflepuff"> Turn it in immediately</label><br>
+      <label><input type="radio" name="q6" value="Gryffindor"> Return it, but imagine spending it first</label>
+    </div>
+
+    <div class="question">
+      <h3>7. What’s most important to you?</h3>
+      <label><input type="radio" name="q7" value="Slytherin"> Power</label><br>
+      <label><input type="radio" name="q7" value="Ravenclaw"> Wisdom</label><br>
+      <label><input type="radio" name="q7" value="Hufflepuff"> Friendship</label><br>
+      <label><input type="radio" name="q7" value="Gryffindor"> Courage</label>
+    </div>
+
+    <div class="question">
+      <h3>8. How do you handle conflict?</h3>
+      <label><input type="radio" name="q8" value="Slytherin"> Outsmart and outmaneuver</label><br>
+      <label><input type="radio" name="q8" value="Ravenclaw"> Talk it through</label><br>
+      <label><input type="radio" name="q8" value="Hufflepuff"> Mediate and keep peace</label><br>
+      <label><input type="radio" name="q8" value="Gryffindor"> Face it head-on</label>
+    </div>
+
+    <div class="question">
+      <h3>9. Which quote speaks to you?</h3>
+      <label><input type="radio" name="q9" value="Slytherin"> "Those cunning folk..."</label><br>
+      <label><input type="radio" name="q9" value="Ravenclaw"> "Wit beyond measure..."</label><br>
+      <label><input type="radio" name="q9" value="Hufflepuff"> "Those patient Hufflepuffs..."</label><br>
+      <label><input type="radio" name="q9" value="Gryffindor"> "Their daring, nerve..."</label>
+    </div>
+
+    <div class="question">
+      <h3>10. What do you value most in friends?</h3>
+      <label><input type="radio" name="q10" value="Slytherin"> Influence</label><br>
+      <label><input type="radio" name="q10" value="Ravenclaw"> Intelligence</label><br>
+      <label><input type="radio" name="q10" value="Hufflepuff"> Loyalty</label><br>
+      <label><input type="radio" name="q10" value="Gryffindor"> Bravery</label>
+    </div>
+
+    <button type="button" onclick="calculateResult()">Get Sorted</button>
+
+    <div class="result" id="result"></div>
   </form>
 
-  <div id="result" aria-live="polite"></div>
-</main>
+  <script>
+    function calculateResult() {
+      const form = document.getElementById('quizForm');
+      const answers = new FormData(form);
+      const scores = {
+        Gryffindor: 0,
+        Ravenclaw: 0,
+        Hufflepuff: 0,
+        Slytherin: 0
+      };
 
-<footer>
-  &copy; 2025 Wizarding World Fan Site.
-</footer>
-
-<script>
-  const form = document.getElementById('quiz-form');
-  const resultDiv = document.getElementById('result');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const scores = { Gryffindor: 0, Slytherin: 0, Ravenclaw: 0, Hufflepuff: 0 };
-
-    for (const value of formData.values()) {
-      if (scores.hasOwnProperty(value)) {
-        scores[value]++;
+      for (let pair of answers.entries()) {
+        const house = pair[1];
+        scores[house]++;
       }
+
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const resultText = `🧙 You belong in: ${sorted[0][0]}!`;
+
+      document.getElementById('result').innerText = resultText;
     }
-
-    // Determine house with highest score
-    let maxScore = 0;
-    let chosenHouse = '';
-    for (const house in scores) {
-      if (scores[house] > maxScore) {
-        maxScore = scores[house];
-        chosenHouse = house;
-      }
-    }
-
-    // House descriptions
-    const descriptions = {
-      Gryffindor: "Gryffindor values bravery, daring, and chivalry. You are courageous and ready to stand up for what is right!",
-      Slytherin: "Slytherin values ambition, cunning, and resourcefulness. You have the drive to achieve great things!",
-      Ravenclaw: "Ravenclaw values intelligence, wisdom, and creativity. Your thirst for knowledge sets you apart!",
-      Hufflepuff: "Hufflepuff values loyalty, patience, and hard work. You are a true friend who values kindness and fairness!"
-    };
-
-    // House colors for styling result
-    const houseColors = {
-      Gryffindor: 'gryffindor',
-      Slytherin: 'slytherin',
-      Ravenclaw: 'ravenclaw',
-      Hufflepuff: 'hufflepuff'
-    };
-
-    resultDiv.textContent = `You belong to ${chosenHouse}! ${descriptions[chosenHouse]}`;
-    resultDiv.className = houseColors[chosenHouse];
-  });
-</script>
+  </script>
 
 </body>
 </html>
