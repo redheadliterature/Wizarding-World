@@ -3,98 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Magical Creatures | Wizarding World Fan Site</title>
+  <title>Magical Creatures | Wizarding World Fanpage</title>
   <style>
+    /* Body background and theme */
     body {
       margin: 0;
       font-family: "Adobe Hebrew", serif;
-      background: radial-gradient(ellipse at bottom, #0a1a2f 0%, #000 100%);
       color: #f5f5f5;
+      background-color: #003300;
+      background-image: linear-gradient(to top right, #003300, #4c4c4c);
       overflow-x: hidden;
     }
 
-    h1 {
-      text-align: center;
+    /* Header style */
+    header {
+      color: white;
       padding: 2rem;
-      color: #cceeff;
-      text-shadow: 2px 2px 6px #000;
-    }
-
-    .creature {
-      background: rgba(0, 80, 40, 0.8);
-      border: 2px solid silver;
-      box-shadow: 0 0 15px #99ffcc;
-      border-radius: 10px;
-      margin: 1.5rem auto;
-      padding: 1rem 1.5rem;
-      max-width: 800px;
-    }
-
-    .creature h2 {
-      margin-top: 0;
-      color: #aaffee;
-      font-size: 1.6rem;
-    }
-
-    .creature p {
-      margin: 0.5rem 0 0;
-      color: #e0f7fa;
-    }
-
-    footer {
       text-align: center;
-      padding: 1rem;
-      color: #ccc;
-      font-size: 0.9rem;
+      border-bottom: 4px solid silver;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 2rem;
+      text-align: center;
       margin-top: 2rem;
     }
 
-    /* Snow effect */
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      pointer-events: none;
-      animation: fall linear infinite;
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
     }
 
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-      }
+    .creature-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .creature-block {
+      background-color: #4c4c4c;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 200px;
+      height: 250px;
+      color: white;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px silver;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .creature-block:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+      box-shadow: 0 0 20px #b0c4de;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #bbb;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
     }
   </style>
 </head>
 <body>
 
-  <h1>20 Magical Creatures of the Wizarding World</h1>
+  <header>
+    <h1>Magical Creatures</h1>
+    <p>Explore the mystical creatures of the wizarding world!</p>
+  </header>
 
-  <!-- Your 20 creature blocks go here (see previous message for content) -->
+  <!-- Content Section -->
+  <div class="content">
+    <h2>Here are some of the most fascinating magical creatures!</h2>
+    <div class="creature-list">
+      <div class="creature-block">Phoenix</div>
+      <div class="creature-block">Hippogriff</div>
+      <div class="creature-block">Centaur</div>
+      <div class="creature-block">Basilisk</div>
+      <div class="creature-block">Dragon</div>
+      <div class="creature-block">Thestral</div>
+      <div class="creature-block">Merpeople</div>
+      <div class="creature-block">Griffin</div>
+      <div class="creature-block">Niffler</div>
+      <div class="creature-block">Acromantula</div>
+      <div class="creature-block">House Elf</div>
+      <div class="creature-block">Hippogriff</div>
+      <div class="creature-block">Veela</div>
+      <div class="creature-block">Kneazle</div>
+      <div class="creature-block">Fwooper</div>
+      <div class="creature-block">Centaurs</div>
+      <div class="creature-block">Troll</div>
+      <div class="creature-block">Bowtruckle</div>
+      <div class="creature-block">Blast-Ended Skrewt</div>
+    </div>
+  </div>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Wizarding World Fan Site
+    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros.
   </footer>
 
-  <script>
-    // Snowflake generator
-    function createSnowflake() {
-      const snowflake = document.createElement("div");
-      snowflake.classList.add("snowflake");
-      const size = Math.random() * 5 + 2;
-      snowflake.style.width = `${size}px`;
-      snowflake.style.height = `${size}px`;
-      snowflake.style.left = `${Math.random() * window.innerWidth}px`;
-      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-      document.body.appendChild(snowflake);
-      setTimeout(() => snowflake.remove(), 7000);
-    }
-
-    setInterval(createSnowflake, 150);
-  </script>
 </body>
 </html>
