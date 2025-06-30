@@ -44,14 +44,16 @@
       margin-top: 2rem;
     }
 
-    /* Navy background with glowing stars */
+    /* Twinkling stars in the navy section */
     .navy-background {
-      background-color: #003366;
+      background-color: #111;
       padding: 4rem 0;
       position: relative;
       text-align: center;
+      color: white;
     }
 
+    /* Twinkling stars effect */
     .navy-background::before {
       content: '';
       position: absolute;
@@ -60,18 +62,19 @@
       width: 100%;
       height: 100%;
       background: url('https://cdn.pixabay.com/photo/2017/08/30/09/27/night-2695562_960_720.jpg') repeat;
-      opacity: 0.2;
+      opacity: 0.3;
       z-index: -1;
       animation: starsAnimation 5s linear infinite;
     }
 
     /* Stars animation */
     @keyframes starsAnimation {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
+      0% { transform: translate(0, 0); opacity: 0.5; }
+      50% { transform: translate(50px, 50px); opacity: 1; }
+      100% { transform: translate(100px, 100px); opacity: 0.5; }
     }
 
-    /* Button Styles */
+    /* Glowing, Hovering Button Styles */
     .button-container {
       display: flex;
       justify-content: center;
@@ -87,14 +90,20 @@
       color: white;
       font-size: 1.2rem;
       background: aquamarine;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      box-shadow: 0 0 15px gold;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.5s ease;
+      box-shadow: 0 0 20px gold;
     }
 
     .button:hover {
       transform: scale(1.1);
       cursor: pointer;
       background-color: #00d6c9;
+      box-shadow: 0 0 30px gold;
+    }
+
+    .button:active {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #fff;
     }
 
     /* Footer */
@@ -118,7 +127,7 @@
   <!-- Gold Border Section -->
   <div class="gold-border"></div>
 
-  <!-- Navy Background with Glowing Stars Section -->
+  <!-- Twinkling Navy Background Section with Buttons -->
   <div class="navy-background">
     <h2>Ready to Begin Your Magical Journey?</h2>
     <p>Click below to either get sorted into your Hogwarts house or explore the wizarding world!</p>
