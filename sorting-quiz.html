@@ -195,4 +195,56 @@
 
       <div class="question-block">
         <p>9. What would you fight for?</p>
-        <label><input type="radio"
+        <label><input type="radio" name="q9" value="gryffindor" required> Justice</label>
+        <label><input type="radio" name="q9" value="slytherin"> Power</label>
+        <label><input type="radio" name="q9" value="hufflepuff"> Fairness</label>
+        <label><input type="radio" name="q9" value="ravenclaw"> Truth</label>
+      </div>
+
+      <div class="question-block">
+        <p>10. Choose a spell:</p>
+        <label><input type="radio" name="q10" value="gryffindor" required> Expelliarmus</label>
+        <label><input type="radio" name="q10" value="slytherin"> Sectumsempra</label>
+        <label><input type="radio" name="q10" value="hufflepuff"> Lumos</label>
+        <label><input type="radio" name="q10" value="ravenclaw"> Leviosa</label>
+      </div>
+
+      <button type="submit" id="submitBtn">See Your House!</button>
+
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const scores = {
+        gryffindor: 0,
+        slytherin: 0,
+        hufflepuff: 0,
+        ravenclaw: 0
+      };
+
+      new FormData(form).forEach(answer => {
+        scores[answer]++;
+      });
+
+      const sortedHouse = Object.keys(scores).reduce((a, b) =>
+        scores[b] > scores[a] ? b : a
+      );
+
+      const houseName = sortedHouse.charAt(0).toUpperCase() + sortedHouse.slice(1);
+      submitBtn.textContent = `Congratulations, you belong in ${houseName}!`;
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        window.location.href = `${sortedHouse}.html`;
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
