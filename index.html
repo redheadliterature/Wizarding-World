@@ -5,75 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wizarding World Fanpage</title>
   <style>
-    /* Body background */
+    /* General Body */
     body {
       margin: 0;
-      font-family: "Adobe Hebrew", serif;
-      color: #f5f5f5;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      background-color: #f5f5f5;
       overflow-x: hidden;
-      background: #f2f2f2;
     }
 
-    /* Main container for the page */
+    /* Main container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 1rem;
+      padding: 2rem;
     }
 
-    /* Header style */
+    /* Header styling */
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      padding: 2rem;
+      background: #2c3e50;
+      color: #ecf0f1;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
-      font-size: 4rem;
-      color: #333;
-      text-shadow: 2px 2px 4px #bbb;
+      font-size: 3rem;
     }
 
     header p {
       font-size: 1.5rem;
-      color: #555;
     }
 
-    /* Main content section */
-    .content {
+    /* Grid Layout */
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       margin-top: 3rem;
     }
 
-    .content div {
-      background: #fff;
+    .grid div {
+      background: #ecf0f1;
+      color: #2c3e50;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .content div:hover {
+    .grid div:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .content div h3 {
+    .grid div h3 {
       font-size: 2rem;
-      color: #333;
     }
 
-    .content div p {
-      font-size: 1.1rem;
-      color: #666;
+    .grid div p {
+      font-size: 1.2rem;
     }
 
     /* Glowing button styles */
     .button-container {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
 
     .button {
@@ -81,8 +81,8 @@
       padding: 1.2rem 3rem;
       font-size: 1.3rem;
       text-decoration: none;
-      background-color: #ffcc00;
-      color: #333;
+      background-color: #2980b9;
+      color: #fff;
       font-weight: bold;
       border-radius: 30px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -90,7 +90,7 @@
     }
 
     .button:hover {
-      background-color: #ffaa00;
+      background-color: #3498db;
       transform: scale(1.05);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
@@ -100,34 +100,31 @@
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
     }
 
-    /* Footer */
+    /* Footer Styling */
     footer {
       text-align: center;
-      margin-top: 5rem;
-      padding: 1.5rem 0;
-      background-color: #111;
+      padding: 1rem 0;
+      background-color: #2c3e50;
       color: #bbb;
       font-size: 0.9rem;
-      border-top: 2px solid #444;
+      border-top: 1px solid #444;
     }
 
     footer a {
       color: #bbb;
       text-decoration: none;
-      font-size: 0.9rem;
     }
 
     footer a:hover {
-      color: #ffcc00;
+      color: #ecf0f1;
     }
 
-    /* Responsive Design */
+    /* Responsive Design for mobile */
     @media screen and (max-width: 768px) {
-      .content {
+      .grid {
         grid-template-columns: 1fr;
       }
     }
-
   </style>
 </head>
 <body>
@@ -140,32 +137,30 @@
       <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
     </header>
 
-    <!-- Main Content Section -->
-    <div class="content">
-      
-      <!-- Block 1: Hogwarts -->
+    <!-- Grid Section -->
+    <div class="grid">
+      <!-- Hogwarts Block -->
       <div>
-        <h3>Hogwarts School of Witchcraft and Wizardry</h3>
-        <p>Home to the Four Houses: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. A school for young witches and wizards to learn magic and history.</p>
+        <h3>Hogwarts School</h3>
+        <p>Where witches and wizards learn magic, and the four houses unite under one roof. Explore the legacy and magic of Hogwarts.</p>
       </div>
 
-      <!-- Block 2: Beauxbatons -->
+      <!-- Beauxbatons Block -->
       <div>
-        <h3>Beauxbatons Academy of Magic</h3>
-        <p>A prestigious school in France, known for its elegance and grace. Beauxbatons' students are highly skilled in Charms and elegant magical practices.</p>
+        <h3>Beauxbatons Academy</h3>
+        <p>Elegant and graceful, Beauxbatons in France is known for its charm and class, focusing on refined and artistic magic.</p>
       </div>
 
-      <!-- Block 3: Durmstrang -->
+      <!-- Durmstrang Block -->
       <div>
         <h3>Durmstrang Institute</h3>
-        <p>Located in Northern Europe, Durmstrang is known for its emphasis on martial magic and Dark Arts studies. It has a strong and proud tradition of producing formidable wizards.</p>
+        <p>Located in the cold, northern lands, Durmstrang is famous for its rigorous martial magic training and producing formidable wizards.</p>
       </div>
-
     </div>
 
     <!-- Button Section -->
     <div class="button-container">
-      <a href="sorting-quiz.html" class="button">Click Here to Get Sorted!</a>
+      <a href="sorting-quiz.html" class="button">Get Sorted Into Your House</a>
       <a href="menupage.html" class="button">Explore the Wizarding World</a>
     </div>
 
