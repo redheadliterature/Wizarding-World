@@ -3,168 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quidditch | Wizarding World Fan Site</title>
+  <title>Quidditch - Wizarding World</title>
   <style>
+    /* General body styling */
     body {
       margin: 0;
       font-family: "Adobe Hebrew", serif;
-      background: radial-gradient(ellipse at bottom, #b10000 0%, #3e0d0d 100%);
       color: #f5f5f5;
+      background: #2a2a2a;
+      background-size: 400% 400%;
+      animation: moveBackground 10s ease-in-out infinite;
       overflow-x: hidden;
     }
 
-    h1 {
+    @keyframes moveBackground {
+      0% { background-position: 100% 0; }
+      50% { background-position: 50% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* Header styling */
+    header {
       text-align: center;
+      padding: 3rem;
+      color: white;
+      border-bottom: 4px solid #d5af6e;
+      background-color: #003366;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    /* Main section with topic blocks */
+    .main-content {
+      padding: 2rem 4rem;
+      background: #111;
+      margin-top: 2rem;
+    }
+
+    /* Section blocks for each topic */
+    .section-block {
+      background-color: #1d1d1d;
       padding: 2rem;
-      color: #e5e5e5;
-      text-shadow: 2px 2px 6px #000;
-    }
-
-    h2 {
-      color: #c0c0c0;
-      text-align: center;
-    }
-
-    .section {
-      background: rgba(80, 10, 10, 0.85);
-      margin: 2rem;
-      padding: 1.5rem;
+      margin-bottom: 3rem;
       border-radius: 10px;
-      box-shadow: 0 0 15px #ff5555;
-      border: 2px solid #c0c0c0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
-    .section h3 {
-      color: #ff9999;
-      text-align: center;
-      margin-top: 0;
+    .section-header {
+      font-size: 2rem;
+      color: #d5af6e;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 5px black;
     }
 
-    .section p {
-      color: #e0e0e0;
-      line-height: 1.6;
+    .section-content {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #f5f5f5;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      color: #ccc;
+      background-color: #111;
+      color: #bbb;
       font-size: 0.9rem;
-      margin-top: 2rem;
+      border-top: 1px solid #444;
     }
 
-    /* Snowflake effect */
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      pointer-events: none;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-      }
-    }
   </style>
 </head>
 <body>
 
-  <h1>The Wizarding World of Quidditch</h1>
+  <header>
+    <h1>Quidditch</h1>
+    <p>The Magical Sport of the Wizarding World</p>
+  </header>
 
-  <div class="section">
-    <h3>Introduction</h3>
-    <p>Quidditch is the most popular wizarding sport played on broomsticks. It is a fast-paced game involving four balls and seven players per team, and it is played on an oval-shaped pitch with three goalposts on each side. The game is known for its excitement, physicality, and skill, as well as its major role in the magical community’s social life.</p>
-  </div>
+  <!-- Main content area with sections -->
+  <div class="main-content">
 
-  <div class="section">
-    <h3>Rules of the Game</h3>
-    <ul>
-      <li>Each team consists of 7 players: 3 Chasers, 2 Beaters, 1 Keeper, and 1 Seeker.</li>
-      <li>The Quaffle is used to score goals worth 10 points each.</li>
-      <li>The Bludgers are enchanted balls that try to disrupt the game. Beaters hit these away from their team.</li>
-      <li>The Golden Snitch is a small winged ball worth 150 points, and it is the object of the Seeker’s search.</li>
-      <li>The game ends when the Snitch is caught, and the team that catches it gets 150 points.</li>
-    </ul>
-  </div>
+    <!-- About Quidditch Section -->
+    <div class="section-block">
+      <h2 class="section-header">About Quidditch</h2>
+      <p class="section-content">
+        Quidditch is a magical sport played on broomsticks by witches and wizards. It is played on an oval-shaped pitch with three goalposts at each end. The game features four balls: the Quaffle, two Bludgers, and the Golden Snitch.
+      </p>
+    </div>
 
-  <div class="section">
-    <h3>Player Positions</h3>
-    <h4>Chasers</h4>
-    <p>There are three Chasers on each team, and their main task is to score goals by getting the Quaffle through one of the opposing team’s three goalposts. Chasers must work together to pass the Quaffle and avoid Bludgers, which are designed to disrupt play.</p>
+    <!-- Rules Section -->
+    <div class="section-block">
+      <h2 class="section-header">Rules of Quidditch</h2>
+      <p class="section-content">
+        The game consists of seven players per team: three Chasers, two Beaters, one Keeper, and one Seeker. The objective is to score by throwing the Quaffle through the opposing team's hoops, while avoiding Bludgers and trying to catch the Golden Snitch for 150 points.
+      </p>
+    </div>
 
-    <h4>Beaters</h4>
-    <p>Beaters are responsible for protecting their teammates from Bludgers and using their bats to hit the Bludgers towards the opposing team. Their main aim is to prevent the other team from gaining possession of the Quaffle or scoring points.</p>
+    <!-- Players Section -->
+    <div class="section-block">
+      <h2 class="section-header">Quidditch Positions & Players</h2>
+      <p class="section-content">
+        Quidditch positions include:
+        <ul>
+          <li><strong>Chasers:</strong> They attempt to score goals by throwing the Quaffle through the opposing team's hoops.</li>
+          <li><strong>Beaters:</strong> They use bats to hit Bludgers to disrupt the opposing team.</li>
+          <li><strong>Keeper:</strong> The team’s goalkeeper, defending the goalposts.</li>
+          <li><strong>Seeker:</strong> The Seeker's job is to catch the Golden Snitch, earning 150 points and ending the game.</li>
+        </ul>
+      </p>
+    </div>
 
-    <h4>Keeper</h4>
-    <p>The Keeper is essentially the team’s goalkeeper. They guard the goalposts and block any Quaffles that are thrown by the opposing team’s Chasers.</p>
+    <!-- Quidditch Teams Section -->
+    <div class="section-block">
+      <h2 class="section-header">Hogwarts Quidditch Teams</h2>
+      <p class="section-content">
+        Each Hogwarts House has its own Quidditch team, and the teams compete against each other in the Hogwarts Quidditch Cup each year. The four teams are:
+        <ul>
+          <li><strong>Gryffindor</strong></li>
+          <li><strong>Slytherin</strong></li>
+          <li><strong>Hufflepuff</strong></li>
+          <li><strong>Ravenclaw</strong></li>
+        </ul>
+      </p>
+    </div>
 
-    <h4>Seeker</h4>
-    <p>The Seeker’s job is to catch the Golden Snitch, which is worth 150 points and ends the game. This is the most exciting and crucial position, as the Snitch is very difficult to catch and often decides the outcome of the match.</p>
-  </div>
+    <!-- Broomstick Recommendations Section -->
+    <div class="section-block">
+      <h2 class="section-header">Broomstick Recommendations</h2>
+      <p class="section-content">
+        The most popular broomsticks for Quidditch are:
+        <ul>
+          <li><strong>Nimbus 2000:</strong> A fast and reliable broomstick, often used by professional players.</li>
+          <li><strong>Firebolt:</strong> One of the fastest broomsticks, known for its maneuverability and speed.</li>
+          <li><strong>Cleansweep Seven:</strong> A more affordable option, known for stability and control.</li>
+        </ul>
+      </p>
+    </div>
 
-  <div class="section">
-    <h3>Famous Teams</h3>
-    <ul>
-      <li><strong>Holyhead Harpies:</strong> A women’s team known for their aggressive play style and consistent victories.</li>
-      <li><strong>Chudley Cannons:</strong> A very popular but often underperforming team in the Quidditch league.</li>
-      <li><strong>Puddlemere United:</strong> One of the oldest and most successful teams in the league.</li>
-      <li><strong>Ballycastle Bats:</strong> Known for their tough defense and skilled Beaters.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h3>Hogwarts House Teams</h3>
-    <p>Each of the four Hogwarts houses has its own Quidditch team. These teams compete every year in the Hogwarts Quidditch Cup, which is part of the larger Inter-House Championship.</p>
-
-    <h4>Gryffindor</h4>
-    <p>Gryffindor’s team is known for its bravery and passion. With players like Harry Potter, the Gryffindors have a long history of intense matches and fierce competition.</p>
-
-    <h4>Slytherin</h4>
-    <p>Slytherin’s team is known for its cunning and skill. Their Seeker, Draco Malfoy, and their aggressive Beaters are part of what makes them such a formidable opponent.</p>
-
-    <h4>Ravenclaw</h4>
-    <p>Ravenclaw’s team plays with intelligence and precision. Their players are quick and strategic, making them a challenging team to beat.</p>
-
-    <h4>Hufflepuff</h4>
-    <p>Hufflepuff’s team is known for its teamwork and perseverance. Though often underestimated, they are a team to be reckoned with, especially in tight matches.</p>
-  </div>
-
-  <div class="section">
-    <h3>Famous Matches & Events</h3>
-    <ul>
-      <li><strong>Quidditch World Cup:</strong> The most prestigious event in Quidditch, held every four years. It attracts teams from all over the world.</li>
-      <li><strong>Hogwarts Inter-House Cup:</strong> Every year, the four Hogwarts houses compete for the Quidditch Cup, where the team with the most wins claims the prize.</li>
-      <li><strong>Harry Potter’s First Match:</strong> In Harry’s first match as Seeker, he caught the Snitch and became a hero in the wizarding world.</li>
-    </ul>
   </div>
 
   <footer>
-    &copy; 2025 Wizarding World Fan Site
+    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros.
   </footer>
-
-  <script>
-    // Snowflake generator
-    function createSnowflake() {
-      const snowflake = document.createElement("div");
-      snowflake.classList.add("snowflake");
-      const size = Math.random() * 5 + 2;
-      snowflake.style.width = `${size}px`;
-      snowflake.style.height = `${size}px`;
-      snowflake.style.left = `${Math.random() * window.innerWidth}px`;
-      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-      document.body.appendChild(snowflake);
-      setTimeout(() => snowflake.remove(), 7000);
-    }
-
-    setInterval(createSnowflake, 150);
-  </script>
 
 </body>
 </html>
