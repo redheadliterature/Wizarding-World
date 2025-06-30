@@ -35,33 +35,31 @@
       margin-bottom: 2rem;
     }
 
-    .houses {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
+    /* Removed .houses and .house styles since not used */
 
-    .house {
-      flex: 1 1 200px;
-      padding: 1.5rem;
-      border-radius: 10px;
-      color: white;
+    /* New button style with multi-color blend */
+    .choose-house-btn {
+      background: linear-gradient(45deg, crimson, gold, green, navy);
+      border: none;
+      border-radius: 12px;
+      padding: 1.5rem 3rem;
+      font-size: 1.75rem;
       font-weight: bold;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .house:hover {
-      transform: scale(1.05);
+      color: white;
       cursor: pointer;
+      box-shadow: 0 4px 15px rgba(200, 200, 200, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 400px;
+      margin: 0 auto;
+      display: inline-block;
+      text-decoration: none;
+      user-select: none;
     }
 
-    /* House Colors */
-    .gryffindor { background: linear-gradient(to bottom right, crimson, gold); color: #fff; }
-    .slytherin  { background: linear-gradient(to bottom right, #1a472a, silver); color: #fff; }
-    .ravenclaw  { background: linear-gradient(to bottom right, navy, #b08d57); color: #fff; }
-    .hufflepuff { background: linear-gradient(to bottom right, gold, black); color: #000; }
+    .choose-house-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(255, 215, 0, 0.7);
+    }
 
     footer {
       text-align: center;
@@ -85,12 +83,7 @@
       <p>From the hallowed halls of Hogwarts to the Forbidden Forest, this is your portal to all things magical.</p>
     </div>
 
-    <div class="houses">
-      <a class="house gryffindor" href="gryffindor.html">🦁 Gryffindor</a>
-      <a class="house slytherin" href="slytherin.html">🐍 Slytherin</a>
-      <a class="house ravenclaw" href="ravenclaw.html">🦅 Ravenclaw</a>
-      <a class="house hufflepuff" href="hufflepuff.html">🦡 Hufflepuff</a>
-    </div>
+    <a href="sorting.html" class="choose-house-btn">Click here to choose your Hogwarts house!</a>
   </main>
 
   <footer>
