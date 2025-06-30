@@ -50,6 +50,41 @@
       color: #f1c232;
     }
 
+    /* Navigation Bar */
+    .nav-bar {
+      background-color: #2f4f4f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-bar ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    .nav-bar ul li {
+      margin: 0 2rem;
+    }
+
+    .nav-bar ul li a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-bar ul li a:hover {
+      color: #d4af37;
+    }
+
     /* Golden Border */
     .gold-border {
       border-top: 4px solid gold;
@@ -132,11 +167,23 @@
       .lower-background {
         padding: 3rem 2rem;
       }
+
+      .nav-bar ul li {
+        margin: 0 1rem;
+      }
     }
 
   </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <ul>
+      <li><a href="menupage.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
 
   <!-- Upper Background Section -->
   <div class="upper-background">
