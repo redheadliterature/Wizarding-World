@@ -5,17 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wizarding World Fanpage</title>
   <style>
+    /* Body background */
     body {
       margin: 0;
       font-family: "Adobe Hebrew", serif;
-      background: radial-gradient(ellipse at bottom, #b10000 0%, #3e0d0d 100%);
       color: #f5f5f5;
       overflow-x: hidden;
+      background: linear-gradient(to right, #b10000, #003366, #1a472a, #f1c232);
+      background-size: 400% 400%;
+      animation: moveBackground 12s ease-in-out infinite;
     }
 
-    /* Header with color changing text */
+    /* Animating the background to move from right to left */
+    @keyframes moveBackground {
+      0% { background-position: 100% 0; }
+      25% { background-position: 75% 0; }
+      50% { background-position: 50% 0; }
+      75% { background-position: 25% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* Header style */
     header {
-      background: linear-gradient(45deg, gold, crimson, green, silver, navy, #b08d57, yellow, black);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -25,142 +36,68 @@
     header h1 {
       font-size: 3rem;
       text-shadow: 2px 2px 4px black;
-      animation: colorChange 5s infinite;
     }
 
-    /* Animation for header text color change */
-    @keyframes colorChange {
-      0% { color: red; }
-      25% { color: blue; }
-      50% { color: green; }
-      75% { color: yellow; }
-      100% { color: red; }
-    }
-
-    /* Floating Candles Animation */
-    .candles-container {
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      animation: floatCandles 10s ease-in-out infinite;
-    }
-
-    .candle {
-      width: 20px;
-      height: 60px;
-      background-color: #f7f0c5;
-      border-radius: 50%;
-      box-shadow: 0 0 10px yellow, 0 0 20px yellow;
-      animation: candleFloat 4s infinite;
-    }
-
-    .candle:before {
-      content: "";
-      width: 10px;
-      height: 20px;
-      background-color: yellow;
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      animation: flicker 0.1s infinite alternate;
-    }
-
-    /* Candle floating animation */
-    @keyframes candleFloat {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-30px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    /* Flickering candle flame */
-    @keyframes flicker {
-      0% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0.6;
-        transform: scale(1.1);
-      }
-    }
-
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .welcome {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .houses {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .house {
-      flex: 1 1 200px;
-      padding: 1.5rem;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .house:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
-
-    /* House Colors */
-    .gryffindor { background: linear-gradient(to bottom right, crimson, gold); color: #fff; }
-    .slytherin  { background: linear-gradient(to bottom right, #1a472a, silver); color: #fff; }
-    .ravenclaw  { background: linear-gradient(to bottom right, navy, #b08d57); color: #fff; }
-    .hufflepuff { background: linear-gradient(to bottom right, gold, black); color: #000; }
-
-    .explore-button-container, .house-buttons-container {
-      display: flex;
-      justify-content: center;
+    /* Gold Border */
+    .gold-border {
+      border-top: 4px solid gold;
       margin-top: 2rem;
     }
 
-    .explore-button, .house-buttons-container a {
-      padding: 1rem 3rem;
+    /* Navy background with glowing stars */
+    .navy-background {
+      background-color: #003366;
+      padding: 4rem 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .navy-background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn.pixabay.com/photo/2017/08/30/09/27/night-2695562_960_720.jpg') repeat;
+      opacity: 0.2;
+      z-index: -1;
+      animation: starsAnimation 5s linear infinite;
+    }
+
+    /* Stars animation */
+    @keyframes starsAnimation {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    /* Button Styles */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .button {
+      padding: 1.2rem 3rem;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      color: #fff;
+      color: white;
       font-size: 1.2rem;
-      background: linear-gradient(45deg, #b10000, #e5e5e5);
+      background: aquamarine;
       transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .explore-button:hover, .house-buttons-container a:hover {
-      transform: scale(1.1);
-      cursor: pointer;
-    }
-
-    .explore-button {
-      background: linear-gradient(45deg, #b10000, #e5e5e5);
       box-shadow: 0 0 15px gold;
     }
 
+    .button:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      background-color: #00d6c9;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
@@ -178,30 +115,22 @@
     <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
   </header>
 
-  <!-- Floating Candles -->
-  <div class="candles-container">
-    <div class="candle"></div>
-    <div class="candle"></div>
-    <div class="candle"></div>
+  <!-- Gold Border Section -->
+  <div class="gold-border"></div>
+
+  <!-- Navy Background with Glowing Stars Section -->
+  <div class="navy-background">
+    <h2>Ready to Begin Your Magical Journey?</h2>
+    <p>Click below to either get sorted into your Hogwarts house or explore the wizarding world!</p>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+      <a href="sorting-quiz.html" class="button">Click Here to Get Sorted!</a>
+      <a href="#" class="button">Explore the Wizarding World</a> <!-- Change link later -->
+    </div>
   </div>
 
-  <main>
-    <div class="welcome">
-      <p>From the hallowed halls of Hogwarts to the Forbidden Forest, this is your portal to all things magical.</p>
-    </div>
-
-    <div class="houses">
-      <a class="house gryffindor" href="gryffindor.html">🦁 Gryffindor</a>
-      <a class="house slytherin" href="slytherin.html">🐍 Slytherin</a>
-      <a class="house ravenclaw" href="ravenclaw.html">🦅 Ravenclaw</a>
-      <a class="house hufflepuff" href="hufflepuff.html">🦡 Hufflepuff</a>
-    </div>
-
-    <div class="explore-button-container">
-      <a href="explore.html" class="explore-button">Explore the Wizarding World!</a>
-    </div>
-  </main>
-
+  <!-- Footer -->
   <footer>
     &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros.
   </footer>
