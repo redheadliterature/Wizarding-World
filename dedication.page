@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dedication - Wizarding World Fanpage</title>
+  <style>
+    /* Body background */
+    body {
+      margin: 0;
+      font-family: "Adobe Hebrew", serif;
+      background: #111;
+      color: #f5f5f5;
+      overflow-x: hidden;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Header style */
+    header {
+      color: white;
+      padding: 2rem;
+      border-bottom: 4px solid gold;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    /* Message Style */
+    .message {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 15px gold;
+    }
+
+    .message p {
+      line-height: 1.5;
+    }
+
+    /* Glowing border effect */
+    .gold-border {
+      margin-top: 3rem;
+      border-top: 4px solid gold;
+    }
+
+    /* Button Styles */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .button {
+      padding: 1.2rem 3rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      font-size: 1.2rem;
+      background: aquamarine;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.5s ease;
+      box-shadow: 0 0 20px gold;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      background-color: #00d6c9;
+      box-shadow: 0 0 30px gold;
+    }
+
+    .button:active {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #bbb;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer a:hover {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>This is for my Wonderful Little Sisters and Brother</h1>
+  </header>
+
+  <div class="message">
+    <p>
+      This website is dedicated to my amazing little sisters: Emp, Lyra, Ash, Deean, Piper, and Ali. 
+      It's also for Zeke, my wonderful, brave little brother. I love you all, and thank you for everything 
+      you've done for me. You are my inspiration, and I am so lucky to have you in my life.
+    </p>
+  </div>
+
+  <!-- Gold Border Section -->
+  <div class="gold-border"></div>
+
+  <!-- Button Section -->
+  <div class="button-container">
+    <a href="index.html" class="button">Back to Homepage</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Wizarding World Fanpage. Not affiliated with J.K. Rowling or Warner Bros. | <a href="index.html">Back to Homepage</a>
+  </footer>
+
+</body>
+</html>
