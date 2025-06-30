@@ -5,94 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wizarding World Fanpage</title>
   <style>
-    /* General Body */
+    /* Global Styles */
     body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: "Georgia", serif;
+      background: linear-gradient(45deg, #003366, #f1c232);
       color: #fff;
-      background: linear-gradient(45deg, #1e3d5a, #f1c232);
-      background-size: 400% 400%;
-      animation: gradientAnimation 15s ease infinite;
+      margin: 0;
+      padding: 0;
+      text-align: center;
       overflow-x: hidden;
     }
 
-    /* Animation for gradient background */
-    @keyframes gradientAnimation {
-      0% { background-position: 100% 50%; }
-      50% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    /* Header Styling */
+    /* Header Section */
     header {
-      text-align: center;
-      padding: 2rem;
+      padding: 4rem 2rem;
       background-color: #003366;
-      color: #f1c232;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       margin-bottom: 3rem;
     }
 
     header h1 {
       font-size: 3.5rem;
-      text-shadow: 0 0 15px #f1c232, 0 0 30px #f1c232;
+      color: #f1c232;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #f1c232, 0 0 20px #f1c232;
     }
 
     header p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #f5f5f5;
+      line-height: 1.6;
     }
 
-    /* Button Container */
+    /* Button Styles */
     .button-container {
       display: flex;
       justify-content: center;
-      gap: 3rem;
+      gap: 2.5rem;
       margin-top: 3rem;
+      flex-wrap: wrap;
     }
 
-    /* Glowing Button Styles */
     .button {
-      display: inline-block;
-      padding: 1.2rem 3rem;
-      font-size: 1.3rem;
-      color: #fff;
-      text-decoration: none;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
       font-weight: bold;
+      color: #003366;
       background-color: #f1c232;
+      text-decoration: none;
       border-radius: 30px;
       text-align: center;
-      box-shadow: 0 0 20px #f1c232, 0 0 30px #f1c232;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.5s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 195, 0, 0.7);
     }
 
     .button:hover {
       background-color: #d4af37;
       transform: scale(1.1);
-      box-shadow: 0 0 30px #f1c232, 0 0 40px #d4af37;
+      box-shadow: 0 0 30px rgba(255, 195, 0, 1);
     }
 
     .button:active {
-      transform: scale(1);
-      box-shadow: 0 0 40px #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(255, 195, 0, 1);
     }
 
-    /* Footer Styling */
+    /* Footer Section */
     footer {
-      text-align: center;
-      padding: 1rem;
       background-color: #003366;
       color: #f1c232;
-      font-size: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
       border-top: 2px solid #f1c232;
-      margin-top: 5rem;
     }
 
     footer a {
       color: #f1c232;
       text-decoration: none;
-      font-size: 1rem;
       transition: color 0.3s ease;
     }
 
@@ -100,24 +93,56 @@
       color: #d4af37;
     }
 
-    /* Responsive Design for mobile */
-    @media screen and (max-width: 768px) {
-      .button-container {
-        flex-direction: column;
-      }
+    /* Content Section */
+    .content {
+      padding: 4rem 2rem;
     }
 
+    .content h2 {
+      font-size: 2.5rem;
+      color: #003366;
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: #f5f5f5;
+      line-height: 1.7;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .button-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .content h2 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Main Content Section -->
+  <!-- Header Section -->
   <header>
     <h1>Welcome to the Wizarding World</h1>
-    <p>Explore the magic of Hogwarts, discover your house, and relive the adventures!</p>
+    <p>Discover the magic of Hogwarts, join the houses, and embark on your magical journey.</p>
   </header>
 
-  <!-- Buttons Section -->
+  <!-- Main Content Section -->
+  <div class="content">
+    <h2>Ready to Begin Your Magical Journey?</h2>
+    <p>Click below to either get sorted into your Hogwarts house or explore the wonders of the wizarding world!</p>
+  </div>
+
+  <!-- Button Section -->
   <div class="button-container">
     <a href="sorting-quiz.html" class="button">Get Sorted Into Your House</a>
     <a href="menupage.html" class="button">Explore the Wizarding World</a>
