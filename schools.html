@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wizarding Schools</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #1d1b1b;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #7d1f1d;
+      padding: 2rem;
+      color: white;
+      border-bottom: 5px solid gold;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .school-blocks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .school-block {
+      background-color: #6f1e1e;
+      padding: 2rem;
+      width: 300px;
+      text-align: center;
+      border-radius: 15px;
+      border: 3px solid transparent;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .school-block:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+    }
+
+    .school-block:hover::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid gold;
+      border-radius: 12px;
+    }
+
+    .school-name {
+      font-size: 2rem;
+      font-weight: bold;
+      color: gold;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .school-description {
+      font-size: 1.1rem;
+      color: #f0e6d2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1d1b1b;
+      color: #bbb;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
+
+    .note {
+      font-style: italic;
+      color: #f0e6d2;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Famous Wizarding Schools</h1>
+    <p>Explore the renowned magical institutions of the wizarding world.</p>
+  </header>
+
+  <div class="school-blocks">
+    <div class="school-block">
+      <div class="school-name">Hogwarts School of Witchcraft and Wizardry</div>
+      <div class="school-description">
+        Founded by Godric Gryffindor, Salazar Slytherin, Helga Hufflepuff, and Rowena Ravenclaw, Hogwarts is the most famous school of magic in Britain. It houses four houses: Gryffindor, Slytherin, Ravenclaw, and Hufflepuff.
+      </div>
+    </div>
+
+    <div class="school-block">
+      <div class="school-name">Beauxbatons Academy of Magic</div>
+      <div class="school-description">
+        Located in the Pyrenees Mountains of France, Beauxbatons is known for its elegance and grace in the magical arts. Students are trained in refined magic, dance, and charm work.
+      </div>
+    </div>
+
+    <div class="school-block">
+      <div class="school-name">Durmstrang Institute</div>
+      <div class="school-description">
+        Located in northern Europe, Durmstrang has a reputation for producing skilled and aggressive witches and wizards, particularly in the dark arts and martial magic.
+      </div>
+    </div>
+
+    <div class="school-block">
+      <div class="school-name">Ilvermorny School of Witchcraft and Wizardry</div>
+      <div class="school-description">
+        The most famous school of magic in North America, Ilvermorny is located on Mount Greylock in Massachusetts. It is known for its four houses: Thunderbird, Wampus, Horned Serpent, and Pukwudgie.
+      </div>
+    </div>
+
+    <div class="school-block">
+      <div class="school-name">Castelobruxo*</div>
+      <div class="school-description">
+        Located in the Amazon rainforest in Brazil, Castelobruxo trains witches and wizards who specialize in magizoology and the care of magical creatures.
+      </div>
+    </div>
+
+    <div class="school-block">
+      <div class="school-name">Mahoutokoro*</div>
+      <div class="school-description">
+        Situated on the volcanic island of Minami Iwo Jima in Japan, Mahoutokoro is known for its rigorous academic programs and for producing exceptional Quidditch players.
+      </div>
+    </div>
+
+    <div class="school-block">
+      <div class="school-name">Uagadou*</div>
+      <div class="school-description">
+        The largest wizarding school in Africa, Uagadou is located in the mountains of Uganda. Known for its expertise in astronomy, alchemy, and the art of casting spells without wands.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Wizarding World Fan Site. All rights reserved.
+  </footer>
+
+  <div class="note">
+    <p>* Not canon. Headcanon schools.</p>
+  </div>
+
+</body>
+</html>
