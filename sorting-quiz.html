@@ -1,274 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sorting Quiz</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background: linear-gradient(to bottom right, #0e1a1f, #1b2b34);
-      color: #f5f5f5;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hogwarts Sorting Quiz</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 
-    header {
-      background: linear-gradient(45deg, crimson, gold, navy, seagreen);
-      background-size: 300% 300%;
-      animation: gradientMove 12s ease infinite;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 4px solid gold;
-      position: relative;
-      z-index: 1;
-    }
+  /* Base & font */
+  body {
+    margin: 0;
+    font-family: 'Unica One', cursive, sans-serif;
+    background: #0a1e3f; /* deep navy */
+    color: #d4d4d4;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  /* Snowflakes container */
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.9;
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 
-    header h1 {
-      font-size: 2.5rem;
-      color: white;
-      text-shadow: 2px 2px 6px #000;
+  /* Snowflake fall animation */
+  @keyframes fall {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.9;
     }
-
-    .magic-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
+    100% {
+      transform: translateY(110vh) translateX(20px);
+      opacity: 0;
     }
+  }
 
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      animation: floatUp linear infinite;
-    }
+  /* Hogwarts castle silhouette behind content */
+  body::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 250px;
+    background:
+      url('data:image/svg+xml;utf8,<svg fill="none" stroke="%23d4af37" stroke-width="2" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg"><path d="M10 240 L50 100 L90 240 L130 120 L170 240 L210 140 L250 240 L290 100 L330 240 L370 140 L410 240 L450 100 L490 240 L530 140 L570 240 L610 100" /></svg>') no-repeat center bottom;
+    background-size: contain;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+  }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1);
-        opacity: 0;
-      }
-    }
+  main {
+    position: relative;
+    max-width: 720px;
+    margin: 3rem auto 1rem;
+    background: #144d14; /* dark green */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 30px 5px #c0c0c0 inset;
+    border: 3px solid silver;
+    z-index: 1;
+  }
 
-    .castle-bg {
-      background: url('https://i.imgur.com/W9M6mGf.png') no-repeat center bottom;
-      background-size: cover;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 40vh;
-      z-index: 0;
-      opacity: 0.2;
-    }
+  h1 {
+    text-align: center;
+    color: gold;
+    text-shadow: 0 0 12px #d4af37;
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+  }
 
-    main {
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    }
+  a#about-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #82c91e;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
 
-    .question-block {
-      margin-bottom: 2rem;
-      background: rgba(50, 60, 50, 0.5);
-      border: 2px solid silver;
-      padding: 1rem;
-      border-radius: 10px;
-    }
+  a#about-link:hover {
+    color: #d4af37;
+  }
 
-    .question-block p {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
 
-    label {
-      display: block;
-      margin: 0.3rem 0;
-      cursor: pointer;
-    }
+  .question-block {
+    background: #1f6f1f; /* medium green */
+    border: 2px solid silver;
+    border-radius: 10px;
+    padding: 1.25rem 1.75rem;
+    box-shadow: 0 0 12px 1.5px #c0c0c0 inset;
+  }
 
-    button {
-      display: block;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background: linear-gradient(135deg, #4effef, #88fff9);
-      color: #003c3c;
-      border: none;
-      border-radius: 10px;
+  .question-block p {
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+    color: #e0e0e0;
+    font-weight: 600;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.55rem;
+    cursor: pointer;
+    font-size: 1.05rem;
+    color: #d9e4c7;
+  }
+
+  input[type="radio"] {
+    margin-right: 0.65rem;
+    cursor: pointer;
+  }
+
+  button[type="submit"] {
+    margin-top: 2rem;
+    background: aquamarine;
+    border: none;
+    border-radius: 30px;
+    padding: 1rem 3rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #004d40;
+    box-shadow: 0 0 15px aquamarine;
+    transition: all 0.3s ease;
+    align-self: center;
+    width: fit-content;
+    user-select: none;
+    animation: pulse 2.5s infinite;
+  }
+
+  button[type="submit"]:hover {
+    background: #00c4b4;
+    box-shadow: 0 0 30px #00c4b4;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  @keyframes pulse {
+    0%, 100% {
       box-shadow: 0 0 15px aquamarine;
-      animation: pulse 2s infinite;
-      transition: transform 0.2s ease;
-      cursor: pointer;
     }
+    50% {
+      box-shadow: 0 0 30px #00c4b4;
+    }
+  }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px aquamarine; }
-      50% { box-shadow: 0 0 25px #88fff9, 0 0 40px #76eec6; }
-      100% { box-shadow: 0 0 10px aquamarine; }
-    }
-
-    button:hover {
-      transform: scale(1.05);
-    }
-
-    .top-link {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-      font-size: 0.9rem;
-      color: lightblue;
-      text-decoration: underline;
-      z-index: 2;
-    }
-  </style>
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: transparent;
+    color: #999;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+</style>
 </head>
 <body>
 
-  <div class="magic-bg" id="particles"></div>
-  <div class="castle-bg"></div>
-
-  <header>
-    <a href="about.html" class="top-link">Skip to About Page</a>
-    <h1>Hogwarts Sorting Quiz</h1>
-  </header>
+  <a id="about-link" href="about.html">Skip quiz and learn about the Wizarding World</a>
 
   <main>
+    <h1>Hogwarts Sorting Quiz</h1>
     <form id="quizForm">
-      <!-- 10 Questions -->
       <div class="question-block">
-        <p>1. What would you do if you found a mysterious key?</p>
-        <label><input type="radio" name="q1" value="gryffindor" required> Use it immediately</label>
-        <label><input type="radio" name="q1" value="slytherin"> Hide it for later advantage</label>
-        <label><input type="radio" name="q1" value="ravenclaw"> Study it thoroughly</label>
-        <label><input type="radio" name="q1" value="hufflepuff"> Ask who lost it</label>
+        <p>1. Which quality do you value most?</p>
+        <label><input type="radio" name="q1" value="gryffindor" required> Bravery</label>
+        <label><input type="radio" name="q1" value="slytherin"> Ambition</label>
+        <label><input type="radio" name="q1" value="ravenclaw"> Intelligence</label>
+        <label><input type="radio" name="q1" value="hufflepuff"> Loyalty</label>
       </div>
 
       <div class="question-block">
-        <p>2. Pick a magical creature:</p>
+        <p>2. Pick a magical pet:</p>
         <label><input type="radio" name="q2" value="gryffindor" required> Phoenix</label>
-        <label><input type="radio" name="q2" value="slytherin"> Basilisk</label>
-        <label><input type="radio" name="q2" value="ravenclaw"> Hippogriff</label>
-        <label><input type="radio" name="q2" value="hufflepuff"> Niffler</label>
+        <label><input type="radio" name="q2" value="slytherin"> Snake</label>
+        <label><input type="radio" name="q2" value="ravenclaw"> Owl</label>
+        <label><input type="radio" name="q2" value="hufflepuff"> Badger</label>
       </div>
 
       <div class="question-block">
-        <p>3. Which trait do you value most?</p>
-        <label><input type="radio" name="q3" value="gryffindor" required> Bravery</label>
-        <label><input type="radio" name="q3" value="slytherin"> Ambition</label>
-        <label><input type="radio" name="q3" value="ravenclaw"> Intelligence</label>
-        <label><input type="radio" name="q3" value="hufflepuff"> Loyalty</label>
+        <p>3. Your favorite color?</p>
+        <label><input type="radio" name="q3" value="gryffindor" required> Scarlet</label>
+        <label><input type="radio" name="q3" value="slytherin"> Green</label>
+        <label><input type="radio" name="q3" value="ravenclaw"> Blue</label>
+        <label><input type="radio" name="q3" value="hufflepuff"> Yellow</label>
       </div>
 
       <div class="question-block">
-        <p>4. Your ideal weekend is spent:</p>
-        <label><input type="radio" name="q4" value="gryffindor" required> Adventuring outdoors</label>
-        <label><input type="radio" name="q4" value="slytherin"> Strategizing your future</label>
-        <label><input type="radio" name="q4" value="ravenclaw"> Reading and learning</label>
-        <label><input type="radio" name="q4" value="hufflepuff"> Helping family and friends</label>
+        <p>4. What motivates you most?</p>
+        <label><input type="radio" name="q4" value="gryffindor" required> Justice</label>
+        <label><input type="radio" name="q4" value="slytherin"> Power</label>
+        <label><input type="radio" name="q4" value="ravenclaw"> Curiosity</label>
+        <label><input type="radio" name="q4" value="hufflepuff"> Compassion</label>
       </div>
 
       <div class="question-block">
-        <p>5. Pick a subject:</p>
-        <label><input type="radio" name="q5" value="gryffindor" required> Defense Against the Dark Arts</label>
-        <label><input type="radio" name="q5" value="slytherin"> Potions</label>
-        <label><input type="radio" name="q5" value="ravenclaw"> Astronomy</label>
-        <label><input type="radio" name="q5" value="hufflepuff"> Herbology</label>
+        <p>5. Choose a magical item:</p>
+        <label><input type="radio" name="q5" value="gryffindor" required> Sword of Gryffindor</label>
+        <label><input type="radio" name="q5" value="slytherin"> Invisibility cloak</label>
+        <label><input type="radio" name="q5" value="ravenclaw"> Pensieve</label>
+        <label><input type="radio" name="q5" value="hufflepuff"> Time turner</label>
       </div>
 
       <div class="question-block">
-        <p>6. Which color speaks to you?</p>
-        <label><input type="radio" name="q6" value="gryffindor" required> Scarlet</label>
-        <label><input type="radio" name="q6" value="slytherin"> Emerald</label>
-        <label><input type="radio" name="q6" value="ravenclaw"> Navy</label>
-        <label><input type="radio" name="q6" value="hufflepuff"> Gold</label>
+        <p>6. Your Patronus would likely be:</p>
+        <label><input type="radio" name="q6" value="gryffindor" required> Lion</label>
+        <label><input type="radio" name="q6" value="slytherin"> Serpent</label>
+        <label><input type="radio" name="q6" value="ravenclaw"> Eagle</label>
+        <label><input type="radio" name="q6" value="hufflepuff"> Badger</label>
       </div>
 
       <div class="question-block">
-        <p>7. What motivates you most?</p>
-        <label><input type="radio" name="q7" value="gryffindor" required> Justice</label>
-        <label><input type="radio" name="q7" value="slytherin"> Power</label>
-        <label><input type="radio" name="q7" value="ravenclaw"> Curiosity</label>
-        <label><input type="radio" name="q7" value="hufflepuff"> Compassion</label>
+        <p>7. How do you face challenges?</p>
+        <label><input type="radio" name="q7" value="gryffindor" required> Head-on with courage</label>
+        <label><input type="radio" name="q7" value="slytherin"> Strategically and patiently</label>
+        <label><input type="radio" name="q7" value="ravenclaw"> By researching all options</label>
+        <label><input type="radio" name="q7" value="hufflepuff"> With persistence and heart</label>
       </div>
 
       <div class="question-block">
-        <p>8. Choose a magical item:</p>
-        <label><input type="radio" name="q8" value="gryffindor" required> Sword of Gryffindor</label>
-        <label><input type="radio" name="q8" value="slytherin"> Invisibility cloak</label>
-        <label><input type="radio" name="q8" value="ravenclaw"> Pensieve</label>
-        <label><input type="radio" name="q8" value="hufflepuff"> Time turner</label>
+        <p>8. Favorite magical subject?</p>
+        <label><input type="radio" name="q8" value="gryffindor" required> Defense Against the Dark Arts</label>
+        <label><input type="radio" name="q8" value="slytherin"> Potions</label>
+        <label><input type="radio" name="q8" value="ravenclaw"> Charms</label>
+        <label><input type="radio" name="q8" value="hufflepuff"> Herbology</label>
       </div>
 
       <div class="question-block">
-        <p>9. Your Patronus would likely be:</p>
-        <label><input type="radio" name="q9" value="gryffindor" required> Lion</label>
-        <label><input type="radio" name="q9" value="slytherin"> Serpent</label>
-        <label><input type="radio" name="q9" value="ravenclaw"> Eagle</label>
-        <label><input type="radio" name="q9" value="hufflepuff"> Badger</label>
+        <p>9. Which house ghost do you find coolest?</p>
+        <label><input type="radio" name="q9" value="gryffindor" required> Nearly Headless Nick</label>
+        <label><input type="radio" name="q9" value="slytherin"> The Bloody Baron</label>
+        <label><input type="radio" name="q9" value="ravenclaw"> The Grey Lady</label>
+        <label><input type="radio" name="q9" value="hufflepuff"> The Fat Friar</label>
       </div>
 
       <div class="question-block">
-        <p>10. Choose a motto:</p>
-        <label><input type="radio" name="q10" value="gryffindor" required> “Dare to be bold.”</label>
-        <label><input type="radio" name="q10" value="slytherin"> “Greatness through cunning.”</label>
-        <label><input type="radio" name="q10" value="ravenclaw"> “Wisdom lights the way.”</label>
-        <label><input type="radio" name="q10" value="hufflepuff"> “Work hard, stay humble.”</label>
+        <p>10. Your ideal weekend plan?</p>
+        <label><input type="radio" name="q10" value="gryffindor" required> Adventure outdoors</label>
+        <label><input type="radio" name="q10" value="slytherin"> Quiet planning and scheming</label>
+        <label><input type="radio" name="q10" value="ravenclaw"> Reading and learning</label>
+        <label><input type="radio" name="q10" value="hufflepuff"> Spending time with friends</label>
       </div>
 
       <button type="submit">✨ Click here to see your house! ✨</button>
     </form>
   </main>
 
-  <script>
-    const form = document.getElementById('quizForm');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  <footer>
+    &copy; 2025 Wizarding World Fan Site
+  </footer>
 
-      const formData = new FormData(form);
-      const scores = { gryffindor: 0, slytherin: 0, ravenclaw: 0, hufflepuff: 0 };
+<script>
+  const form = document.getElementById('quizForm');
 
-      for (const [key, value] of formData.entries()) {
-        scores[value]++;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Count votes
+    const houseVotes = {
+      gryffindor: 0,
+      slytherin: 0,
+      ravenclaw: 0,
+      hufflepuff: 0
+    };
+
+    const formData = new FormData(form);
+    for (const [key, value] of formData.entries()) {
+      if (houseVotes.hasOwnProperty(value)) {
+        houseVotes[value]++;
       }
-
-      const sortedHouse = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
-      window.location.href = sortedHouse + '.html';
-    });
-
-    const particles = document.getElementById('particles');
-    for (let i = 0; i < 40; i++) {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      p.style.left = `${Math.random() * 100}vw`;
-      p.style.animationDuration = `${8 + Math.random() * 10}s`;
-      p.style.animationDelay = `${Math.random() * 5}s`;
-      particles.appendChild(p);
     }
-  </script>
+
+    // Determine house with max votes
+    let maxVotes = 0;
+    let sortedHouse = 'gryffindor'; // default fallback
+    for (const house in houseVotes) {
+      if (houseVotes[house] > maxVotes) {
+        maxVotes = houseVotes[house];
+        sortedHouse = house;
+      }
+    }
+
+    // Redirect to house page
+    window.location.href = sortedHouse + '.html';
+  });
+
+  // Generate snowflakes
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    const size = Math.random() * 6 + 4 + 'px';
+    snowflake.style.width = size;
+    snowflake.style.height = size;
+    snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    snowflake.style.opacity = Math.random();
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, 10000);
+  }
+
+  setInterval(createSnowflake, 150);
+</script>
 
 </body>
 </html>
