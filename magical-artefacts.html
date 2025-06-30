@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magical Artefacts</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #1b3c34;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #2f4f4f;
+      padding: 2rem;
+      color: white;
+      border-bottom: 5px solid silver;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .artifact-blocks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .artifact-block {
+      background-color: #283c2f;
+      padding: 2rem;
+      width: 300px;
+      text-align: center;
+      border-radius: 15px;
+      border: 3px solid transparent;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .artifact-block:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 255, 0, 0.6);
+    }
+
+    .artifact-block:hover::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid silver;
+      border-radius: 12px;
+    }
+
+    .artifact-name {
+      font-size: 2rem;
+      font-weight: bold;
+      color: silver;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .artifact-description {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2f4f4f;
+      color: #bbb;
+      font-size: 0.9rem;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Magical Artefacts</h1>
+    <p>Explore some of the most famous magical artefacts in the wizarding world.</p>
+  </header>
+
+  <div class="artifact-blocks">
+    <div class="artifact-block">
+      <div class="artifact-name">The Elder Wand</div>
+      <div class="artifact-description">
+        The Elder Wand is one of the three Deathly Hallows. It is the most powerful wand ever made and is said to never fail its master.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Invisibility Cloak</div>
+      <div class="artifact-description">
+        Another of the Deathly Hallows, the Invisibility Cloak grants the wearer complete invisibility and has been passed down through generations.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Resurrection Stone</div>
+      <div class="artifact-description">
+        The Resurrection Stone, the third of the Deathly Hallows, is said to bring back the spirits of the deceased, though they are not truly alive.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Marauder's Map</div>
+      <div class="artifact-description">
+        A magical map created by James Potter, Sirius Black, Remus Lupin, and Peter Pettigrew. It shows the entire Hogwarts castle and its inhabitants.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Philosopher's Stone</div>
+      <div class="artifact-description">
+        A magical object that can transform any metal into pure gold and create the Elixir of Life, granting immortality to its possessor.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Time-Turner</div>
+      <div class="artifact-description">
+        A magical time-travel device that allows the user to travel back in time, though with limited use to prevent major paradoxes.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Sword of Gryffindor</div>
+      <div class="artifact-description">
+        A goblin-made sword that belonged to Godric Gryffindor, it is imbued with magic and can absorb the qualities of substances it comes into contact with.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Hufflepuff Cup</div>
+      <div class="artifact-description">
+        A golden cup owned by Helga Hufflepuff, one of the Hogwarts founders. It became one of Voldemort's Horcruxes.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Ravenclaw Diadem</div>
+      <div class="artifact-description">
+        A crown worn by Rowena Ravenclaw, one of the Hogwarts founders. It was also turned into a Horcrux by Voldemort.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Slytherin Locket</div>
+      <div class="artifact-description">
+        A locket belonging to Salazar Slytherin, one of the Hogwarts founders. It was later turned into a Horcrux by Voldemort.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Triwizard Cup</div>
+      <div class="artifact-description">
+        A magical cup that serves as the prize in the Triwizard Tournament. It was used by Barty Crouch Jr. to transport Harry Potter to Voldemort.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">Fawkes's Tears</div>
+      <div class="artifact-description">
+        Fawkes, Dumbledore's phoenix, can heal people with his tears, which have powerful restorative properties.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Vanishing Cabinet</div>
+      <div class="artifact-description">
+        A magical object capable of transporting people from one place to another, often used for secretive and clandestine purposes.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Sorting Hat</div>
+      <div class="artifact-description">
+        The magical hat used at Hogwarts to sort students into one of the four houses: Gryffindor, Slytherin, Ravenclaw, and Hufflepuff.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Black Family Tapestry</div>
+      <div class="artifact-description">
+        A magical tapestry that traces the genealogical lineage of the Black family, showing members and their relationships.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Quidditch World Cup Trophy</div>
+      <div class="artifact-description">
+        A prestigious trophy awarded to the winner of the Quidditch World Cup, a symbol of magical sporting excellence.
+      </div>
+    </div>
+
+    <div class="artifact-block">
+      <div class="artifact-name">The Cloak of Invisibility</div>
+      <div class="artifact-description">
+        A rare and powerful magical item that allows the wearer to become invisible. Often associated with the Deathly Hallows.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Wizarding World Fan Site. All rights reserved.
+  </footer>
+
+</body>
+</html>
