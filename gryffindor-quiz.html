@@ -31,6 +31,11 @@
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffdb4d; /* bright gold on hover */
+      text-shadow: 0 0 10px #ffdb4d;
     }
 
     main {
@@ -46,30 +51,54 @@
       text-align: center;
       margin-bottom: 2rem;
       color: #ecb939;
+      text-shadow: 0 0 12px #ffcc33;
     }
 
+    /* Glowing Question Blocks */
     .question {
-      background-color: rgba(236, 185, 57, 0.1);
-      border: 2px solid #ecb939;
-      padding: 1rem;
+      background: rgba(236, 185, 57, 0.15);
+      padding: 1.2rem 1.5rem;
       margin-bottom: 1.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow:
+        0 0 8px 3px #ecb939aa,
+        inset 0 0 10px 3px #ffdb4d99;
+      border: 2px solid #ecb939cc;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Glow and scale on hover and focus */
+    .question:hover,
+    .question:focus-within,
+    .question:focus {
+      box-shadow:
+        0 0 22px 8px #ffd633dd,
+        inset 0 0 18px 8px #fff066cc;
+      transform: scale(1.02);
+      outline: none;
     }
 
     .question p {
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
       color: #ecb939;
+      text-shadow: 0 0 6px #ffcc33cc;
+      user-select: none;
     }
 
     label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       cursor: pointer;
+      user-select: none;
     }
 
     input[type="radio"] {
       margin-right: 0.5rem;
+      transform: scale(1.15);
+      vertical-align: middle;
+      cursor: pointer;
     }
 
     button {
@@ -78,28 +107,34 @@
       color: #7f0909;
       border: none;
       padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 8px;
       margin: 2rem auto 0 auto;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 12px #ecb939bb;
     }
 
     button:hover {
       background-color: #d3a625;
+      box-shadow: 0 0 20px #ffd633cc;
     }
 
     #result {
       margin-top: 2rem;
-      padding: 1rem;
+      padding: 1.2rem;
       background-color: #ecb939;
       color: #7f0909;
       text-align: center;
-      border-radius: 8px;
-      font-size: 1.2rem;
+      border-radius: 10px;
+      font-size: 1.3rem;
       font-weight: bold;
-      box-shadow: 0 0 10px #7f0909;
+      box-shadow: 0 0 15px #7f0909cc;
+      user-select: none;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -119,7 +154,7 @@
     <h1>Are You a True Gryffindor?</h1>
 
     <form id="quiz-form">
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>1. What do you value most?</p>
         <label><input type="radio" name="q1" value="1" required> Courage</label>
         <label><input type="radio" name="q1" value="0"> Ambition</label>
@@ -127,7 +162,7 @@
         <label><input type="radio" name="q1" value="0"> Loyalty</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>2. How do you handle fear?</p>
         <label><input type="radio" name="q2" value="1" required> Face it head-on</label>
         <label><input type="radio" name="q2" value="0"> Avoid it</label>
@@ -135,7 +170,7 @@
         <label><input type="radio" name="q2" value="0"> Seek help from friends</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>3. Your ideal adventure?</p>
         <label><input type="radio" name="q3" value="1" required> A daring rescue</label>
         <label><input type="radio" name="q3" value="0"> Uncovering secrets</label>
@@ -143,7 +178,7 @@
         <label><input type="radio" name="q3" value="0"> Building alliances</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>4. What do you dislike most?</p>
         <label><input type="radio" name="q4" value="1" required> Cowardice</label>
         <label><input type="radio" name="q4" value="0"> Laziness</label>
@@ -151,7 +186,7 @@
         <label><input type="radio" name="q4" value="0"> Dishonesty</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>5. Choose a magical creature:</p>
         <label><input type="radio" name="q5" value="1" required> Phoenix</label>
         <label><input type="radio" name="q5" value="0"> Niffler</label>
@@ -159,7 +194,7 @@
         <label><input type="radio" name="q5" value="0"> Basilisk</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>6. What motivates you?</p>
         <label><input type="radio" name="q6" value="1" required> Doing what's right</label>
         <label><input type="radio" name="q6" value="0"> Power and success</label>
@@ -167,7 +202,7 @@
         <label><input type="radio" name="q6" value="0"> Friendship</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>7. Your best quality?</p>
         <label><input type="radio" name="q7" value="1" required> Bravery</label>
         <label><input type="radio" name="q7" value="0"> Cunning</label>
@@ -175,7 +210,7 @@
         <label><input type="radio" name="q7" value="0"> Patience</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>8. Which class would you excel in?</p>
         <label><input type="radio" name="q8" value="1" required> Defense Against the Dark Arts</label>
         <label><input type="radio" name="q8" value="0"> Potions</label>
@@ -183,7 +218,7 @@
         <label><input type="radio" name="q8" value="0"> Herbology</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>9. Preferred way to solve conflicts?</p>
         <label><input type="radio" name="q9" value="1" required> Direct confrontation</label>
         <label><input type="radio" name="q9" value="0"> Negotiation</label>
@@ -191,7 +226,7 @@
         <label><input type="radio" name="q9" value="0"> Avoidance</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>10. What do you admire most in others?</p>
         <label><input type="radio" name="q10" value="1" required> Courage and daring</label>
         <label><input type="radio" name="q10" value="0"> Loyalty</label>
@@ -229,6 +264,7 @@
       }
 
       resultDiv.textContent = message;
+      resultDiv.className = "gryffindor-result";
     });
   </script>
 </body>
