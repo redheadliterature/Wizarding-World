@@ -9,21 +9,26 @@
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      background-color: #1b3c34;
+      background-color: #0a192f; /* Navy */
       color: #f5f5f5;
     }
 
     header {
-      background-color: #d32f2f;
-      color: white;
+      background-color: #bfa135; /* Gold */
+      color: #0a192f;
       padding: 2rem;
       text-align: center;
-      border-bottom: 4px solid gold;
+      border-bottom: 4px solid #ffd700;
     }
 
     header h1 {
       font-size: 3.5rem;
-      text-shadow: 2px 2px 4px black;
+      text-shadow: 2px 2px 4px #000;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
     }
 
     main {
@@ -31,27 +36,28 @@
       flex-wrap: wrap;
       justify-content: center;
       padding: 3rem;
-      gap: 3rem;
+      gap: 2.5rem;
     }
 
     .menu-block {
-      background-color: #b07d3c;
-      color: white;
+      background-color: #112240; /* Darker navy */
+      color: #ffd700; /* Gold */
       padding: 2rem;
-      width: 250px;
+      width: 260px;
       text-align: center;
       border-radius: 15px;
-      border: 2px solid transparent;
-      box-shadow: 0 0 12px rgba(255, 223, 120, 0.4);
-      transition: all 0.3s ease, box-shadow 0.5s ease;
+      border: 2px solid #ffd70040;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+      transition: all 0.3s ease;
       position: relative;
       cursor: pointer;
-      animation: pulseGlow 2s infinite alternate;
+      animation: glowPulse 2s infinite alternate;
+      text-decoration: none;
     }
 
     .menu-block:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 20px 6px rgba(255, 215, 0, 0.7);
+      transform: scale(1.06);
+      box-shadow: 0 0 20px 6px rgba(255, 215, 0, 0.5);
     }
 
     .menu-block:hover::before {
@@ -61,36 +67,36 @@
       left: -8px;
       width: calc(100% + 16px);
       height: calc(100% + 16px);
-      border: 2px solid gold;
+      border: 2px solid #ffd700;
       border-radius: 20px;
-      box-shadow: 0 0 20px gold;
+      box-shadow: 0 0 16px #ffd700;
       z-index: -1;
     }
 
-    @keyframes pulseGlow {
+    @keyframes glowPulse {
       0% {
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
       }
       100% {
-        box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
+        box-shadow: 0 0 16px rgba(255, 215, 0, 0.5);
       }
     }
 
     .menu-block h3 {
       font-size: 2rem;
-      font-weight: bold;
       margin-bottom: 1rem;
+      color: #ffd700;
     }
 
     .menu-block p {
       font-size: 1.1rem;
-      color: #e0e0e0;
+      color: #e5e5e5;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #2f2f2f;
+      background-color: #0d1b2a;
       color: #bbb;
       font-size: 0.9rem;
       border-top: 1px solid #444;
@@ -101,7 +107,7 @@
 
   <header>
     <h1>Explore the Wizarding World</h1>
-    <p>Delve into magical creatures, sports, artefacts, and wands!</p>
+    <p>Delve into magical creatures, spells, artefacts, and wands!</p>
   </header>
 
   <main>
@@ -125,8 +131,7 @@
       <p>Understand the magical woods and cores used in wand-making.</p>
     </a>
 
-    <!-- 🔮 NEW SPELL ENCYCLOPEDIA BLOCK -->
-    <a href="spell-encyclopedia.html" class="menu-block">
+    <a href="spell-encyclopaedia.html" class="menu-block">
       <h3>Spell Encyclopedia</h3>
       <p>Browse 25 iconic spells including the Unforgivable Curses.</p>
     </a>
