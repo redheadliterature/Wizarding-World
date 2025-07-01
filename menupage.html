@@ -42,26 +42,38 @@
       text-align: center;
       border-radius: 15px;
       border: 2px solid transparent;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(255, 223, 120, 0.4);
+      transition: all 0.3s ease, box-shadow 0.5s ease;
       position: relative;
       cursor: pointer;
+      animation: pulseGlow 2s infinite alternate;
     }
 
     .menu-block:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+      transform: scale(1.07);
+      box-shadow: 0 0 20px 6px rgba(255, 215, 0, 0.7);
     }
 
     .menu-block:hover::before {
       content: '';
       position: absolute;
-      top: -10px;
-      left: -10px;
-      width: 100%;
-      height: 100%;
-      border: 3px solid gold;
-      border-radius: 12px;
+      top: -8px;
+      left: -8px;
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+      border: 2px solid gold;
+      border-radius: 20px;
+      box-shadow: 0 0 20px gold;
+      z-index: -1;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
+      }
     }
 
     .menu-block h3 {
@@ -111,6 +123,12 @@
     <a href="wandcore.html" class="menu-block">
       <h3>Wandcore</h3>
       <p>Understand the magical woods and cores used in wand-making.</p>
+    </a>
+
+    <!-- 🔮 NEW SPELL ENCYCLOPEDIA BLOCK -->
+    <a href="spells.html" class="menu-block">
+      <h3>Spell Encyclopedia</h3>
+      <p>Browse 25 iconic spells including the Unforgivable Curses.</p>
     </a>
   </main>
 
