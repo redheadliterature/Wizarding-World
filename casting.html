@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spell Casting</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 50px;
+      transition: background-color 0.5s ease;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: lightblue;
+      text-shadow: 0 0 10px #5fdcff;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Cast a Spell ✨</h1>
+  <input type="text" id="spellInput" placeholder="Type a spell (e.g., Lumos)">
+  <br>
+  <button onclick="castSpell()">Cast</button>
+
+  <div id="result"></div>
+
+  <script>
+    function castSpell() {
+      const spell = document.getElementById('spellInput').value.trim().toLowerCase();
+      const result = document.getElementById('result');
+
+      if (spell === "lumos") {
+        document.body.style.backgroundColor = "#fefbd8";
+        result.textContent = "💡 Lumos! Let there be light.";
+      } else if (spell === "nox") {
+        document.body.style.backgroundColor = "#0d0d0d";
+        result.textContent = "🌑 Nox! Darkness returns.";
+      } else if (spell === "expecto patronum") {
+        result.textContent = "🦌 Expecto Patronum! A Patronus bursts forth!";
+      } else {
+        result.textContent = "🪄 Unknown spell. Try Lumos, Nox, or Expecto Patronum.";
+      }
+
+      document.getElementById('spellInput').value = '';
+    }
+  </script>
+</body>
+</html>
