@@ -56,21 +56,18 @@
       padding: 20px;
       box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
       transition: all 0.3s ease;
-      animation: pulseGlow 2.2s infinite alternate;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .spell-card.reveal {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .spell-card:hover {
       transform: scale(1.05);
       box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
-    }
-
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-      }
-      100% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-      }
     }
 
     .spell-card h2 {
@@ -172,7 +169,7 @@
           const matchesType = selectedType === '' || spell.type === selectedType;
           return matchesName && matchesType;
         })
-        .forEach(spell => {
+        .forEach((spell, index) => {
           const card = document.createElement('div');
           card.className = 'spell-card' + (spell.unforgivable ? ' unforgivable' : '');
           card.innerHTML = `
@@ -184,7 +181,26 @@
           `;
           spellGrid.appendChild(card);
         });
+
+      animateOnScroll();
     }
+
+    function animateOnScroll() {
+      const cards = document.querySelectorAll('.spell-card');
+      const triggerBottom = window.innerHeight * 0.9;
+
+      cards.forEach((card, index) => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < triggerBottom) {
+          setTimeout(() => {
+            card.classList.add('reveal');
+          }, index * 100);
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
 
     search.addEventListener('input', renderSpells);
     typeFilter.addEventListener('change', renderSpells);
