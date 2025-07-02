@@ -5,143 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Slytherin Quiz - Wizarding World</title>
 
-  <!-- Adobe Thai Font -->
+  <!-- Adobe Thai font -->
   <link href="https://fonts.googleapis.com/css2?family=Adobe+Thai&display=swap" rel="stylesheet" />
 
   <style>
     body {
-      background: linear-gradient(135deg, #1a472a, #333333);
-      color: #d0d0d0;
       font-family: 'Adobe Thai', sans-serif;
+      background-color: #0B3D0B; /* Dark green */
+      color: #C0C0C0; /* Silver gray */
       margin: 0;
       padding: 0;
     }
 
     header, nav, footer {
-      background-color: rgba(26, 71, 42, 0.9);
-      color: #d0d0d0;
-      text-align: center;
+      background-color: #062606; /* Even darker green */
+      color: #3AA14F; /* Bright green accent */
+      box-shadow: 0 0 15px #3AA14F;
       padding: 1rem;
-      box-shadow: 0 0 15px #5dfc5d;
-      text-shadow: 0 0 6px #2aa52a;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     nav a {
-      color: #d0d0d0;
-      margin: 0 15px;
+      color: #3AA14F;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: #5dfc5d;
-      bottom: -4px;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #aaffaa;
-    }
-
-    nav a:hover::after {
-      transform: scaleX(1);
+      color: #a8ffb0;
+      text-shadow: 0 0 10px #a8ffb0;
     }
 
     main {
-      background-color: rgba(26, 71, 42, 0.95);
-      max-width: 800px;
-      margin: 2rem auto;
+      background-color: #0B3D0B;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #39ff39cc;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #3AA14Faa;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 2rem;
-      font-size: 2.5rem;
-      color: #aaffaa;
-      text-shadow: 0 0 10px #5dfc5d;
+      color: #3AA14F;
+      text-shadow: 0 0 10px #a8ffb0cc;
     }
 
     .question {
-      background: rgba(50, 100, 60, 0.9);
-      border: 2px solid #5dfc5d;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px 2px #2aa52a88, inset 0 0 10px 2px #5dfc5dcc;
+      background: rgba(58, 161, 79, 0.08);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow:
+        0 0 8px 3px #3AA14F55,
+        inset 0 0 10px 3px #3AA14F33;
+      border: 2px solid #3AA14Fcc;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       cursor: pointer;
     }
 
     .question:hover,
-    .question:focus-within {
-      box-shadow: 0 0 20px 6px #39ff39cc, inset 0 0 18px 6px #7eff7ecc;
+    .question:focus-within,
+    .question:focus {
+      box-shadow:
+        0 0 22px 8px #a8ffb0cc,
+        inset 0 0 18px 8px #d4ffbdcc;
       transform: scale(1.02);
+      outline: none;
     }
 
     .question p {
       font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
+      color: #3AA14F;
+      text-shadow: 0 0 6px #a8ffb0aa;
+      user-select: none;
     }
 
     label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       cursor: pointer;
+      user-select: none;
     }
 
     input[type="radio"] {
       margin-right: 0.5rem;
-      transform: scale(1.2);
+      transform: scale(1.15);
+      vertical-align: middle;
       cursor: pointer;
     }
 
-    button[type="submit"] {
-      background-color: #aaaaaa;
-      color: #1a472a;
+    button {
+      display: block;
+      background-color: #3AA14F;
+      color: #0B3D0B;
       border: none;
-      padding: 15px 30px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      display: block;
-      margin: 2rem auto 0;
-      box-shadow: 0 0 15px #5dfc5d;
+      border-radius: 8px;
+      margin: 2rem auto 0 auto;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 12px #a8ffb099;
     }
 
-    button[type="submit"]:hover {
-      background-color: #888888;
-      transform: scale(1.05);
+    button:hover {
+      background-color: #7fdb8a;
+      box-shadow: 0 0 20px #c9ffd7cc;
     }
 
     #result {
       margin-top: 2rem;
-      padding: 1rem 1.5rem;
-      background-color: #aaaaaa;
-      color: #1a472a;
-      box-shadow: 0 0 15px #39ff39cc;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.3rem;
+      padding: 1.2rem;
+      background-color: #3AA14F;
+      color: #0B3D0B;
       text-align: center;
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      box-shadow: 0 0 15px #a8ffb0cc;
+      user-select: none;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -160,19 +154,100 @@
   <main>
     <h1>Are You a True Slytherin?</h1>
 
-    <!-- [Insert your 10-question form here] -->
-    <!-- No changes needed to the form itself -->
+    <form id="quiz-form">
+      <div class="question" tabindex="0">
+        <p>1. Which trait do you value most?</p>
+        <label><input type="radio" name="q1" value="1" required> Ambition</label>
+        <label><input type="radio" name="q1" value="0"> Bravery</label>
+        <label><input type="radio" name="q1" value="0"> Loyalty</label>
+        <label><input type="radio" name="q1" value="0"> Wisdom</label>
+      </div>
 
-    <div id="result"></div>
+      <div class="question" tabindex="0">
+        <p>2. How do you achieve your goals?</p>
+        <label><input type="radio" name="q2" value="1" required> With cunning and planning</label>
+        <label><input type="radio" name="q2" value="0"> By taking bold risks</label>
+        <label><input type="radio" name="q2" value="0"> With patience and kindness</label>
+        <label><input type="radio" name="q2" value="0"> By studying hard</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>3. What is your leadership style?</p>
+        <label><input type="radio" name="q3" value="1" required> Strategic and persuasive</label>
+        <label><input type="radio" name="q3" value="0"> Inspirational and brave</label>
+        <label><input type="radio" name="q3" value="0"> Supportive and fair</label>
+        <label><input type="radio" name="q3" value="0"> Analytical and logical</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>4. Your ideal magical pet?</p>
+        <label><input type="radio" name="q4" value="1" required> Snake</label>
+        <label><input type="radio" name="q4" value="0"> Hippogriff</label>
+        <label><input type="radio" name="q4" value="0"> Otter</label>
+        <label><input type="radio" name="q4" value="0"> Raven</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>5. How do you react when faced with a challenge?</p>
+        <label><input type="radio" name="q5" value="1" required> Look for the smartest way around it</label>
+        <label><input type="radio" name="q5" value="0"> Face it head on</label>
+        <label><input type="radio" name="q5" value="0"> Ask for help from friends</label>
+        <label><input type="radio" name="q5" value="0"> Research and prepare thoroughly</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>6. Which Hogwarts subject appeals most?</p>
+        <label><input type="radio" name="q6" value="1" required> Potions</label>
+        <label><input type="radio" name="q6" value="0"> Defense Against the Dark Arts</label>
+        <label><input type="radio" name="q6" value="0"> Care of Magical Creatures</label>
+        <label><input type="radio" name="q6" value="0"> Charms</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>7. What motivates you?</p>
+        <label><input type="radio" name="q7" value="1" required> Success and influence</label>
+        <label><input type="radio" name="q7" value="0"> Adventure and courage</label>
+        <label><input type="radio" name="q7" value="0"> Friendship and loyalty</label>
+        <label><input type="radio" name="q7" value="0"> Knowledge and wisdom</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>8. How do you view rules?</p>
+        <label><input type="radio" name="q8" value="1" required> Guidelines to be cleverly navigated</label>
+        <label><input type="radio" name="q8" value="0"> To be followed strictly</label>
+        <label><input type="radio" name="q8" value="0"> Important for fairness</label>
+        <label><input type="radio" name="q8" value="0"> Essential for order</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>9. Which phrase describes you best?</p>
+        <label><input type="radio" name="q9" value="1" required> "I do what I must to succeed."</label>
+        <label><input type="radio" name="q9" value="0"> "Bravery is the key to greatness."</label>
+        <label><input type="radio" name="q9" value="0"> "Kindness is my strength."</label>
+        <label><input type="radio" name="q9" value="0"> "Knowledge is power."</label>
+      </div>
+
+      <div class="question" tabindex="0">
+        <p>10. Your favorite place at Hogwarts?</p>
+        <label><input type="radio" name="q10" value="1" required> The dungeons</label>
+        <label><input type="radio" name="q10" value="0"> The Gryffindor common room</label>
+        <label><input type="radio" name="q10" value="0"> The library</label>
+        <label><input type="radio" name="q10" value="0"> The Quidditch pitch</label>
+      </div>
+
+      <button type="submit">See Your Result</button>
+    </form>
+
+    <div id="result" aria-live="polite"></div>
   </main>
 
-  <footer>&copy; 2025 Wizarding World Fan Site</footer>
+  <footer>© 2025 Wizarding World Fan Site</footer>
 
   <script>
     const form = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       let score = 0;
       for (let i = 1; i <= 10; i++) {
@@ -183,9 +258,9 @@
       if (score >= 8) {
         message = "You are a TRUE Slytherin! Ambitious, cunning, and resourceful.";
       } else if (score >= 5) {
-        message = "You have many Slytherin traits, but there’s room to grow.";
+        message = "You share many Slytherin qualities, but there’s room to grow.";
       } else {
-        message = "You might not be a perfect Slytherin, but ambition can come in many forms!";
+        message = "You might not fit the classic Slytherin mold, but every house has its strengths.";
       }
 
       resultDiv.textContent = message;
