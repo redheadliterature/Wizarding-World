@@ -5,21 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Slytherin Quiz - Wizarding World</title>
 
-  <!-- Adobe Thai font -->
   <link href="https://fonts.googleapis.com/css2?family=Adobe+Thai&display=swap" rel="stylesheet" />
 
   <style>
     body {
       font-family: 'Adobe Thai', sans-serif;
-      background-color: #0B3D0B; /* Dark green */
-      color: #C0C0C0; /* Silver gray */
+      background-color: #0B3D0B;
+      color: #D0D0D0;
       margin: 0;
       padding: 0;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Green mist background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(circle at 30% 30%, #3AA14F33, transparent 60%),
+        radial-gradient(circle at 70% 60%, #3AA14F22, transparent 60%),
+        radial-gradient(circle at 50% 50%, #3AA14F44, transparent 60%);
+      background-size: 100% 100%;
+      animation: mistMove 40s linear infinite;
+      z-index: -1;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    @keyframes mistMove {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.05); }
+      100% { transform: translate(0, 0) scale(1); }
     }
 
     header, nav, footer {
-      background-color: #062606; /* Even darker green */
-      color: #3AA14F; /* Bright green accent */
+      background-color: #062606;
+      color: #3AA14F;
       box-shadow: 0 0 15px #3AA14F;
       padding: 1rem;
       text-align: center;
@@ -33,7 +59,6 @@
       margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -48,6 +73,8 @@
       margin: auto;
       border-radius: 10px;
       box-shadow: 0 0 20px #3AA14Faa;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -62,20 +89,14 @@
       padding: 1.2rem 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: 12px;
-      box-shadow:
-        0 0 8px 3px #3AA14F55,
-        inset 0 0 10px 3px #3AA14F33;
+      box-shadow: 0 0 8px 3px #3AA14F55, inset 0 0 10px 3px #3AA14F33;
       border: 2px solid #3AA14Fcc;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
     }
 
     .question:hover,
-    .question:focus-within,
-    .question:focus {
-      box-shadow:
-        0 0 22px 8px #a8ffb0cc,
-        inset 0 0 18px 8px #d4ffbdcc;
+    .question:focus-within {
+      box-shadow: 0 0 22px 8px #a8ffb0cc, inset 0 0 18px 8px #d4ffbdcc;
       transform: scale(1.02);
       outline: none;
     }
@@ -85,21 +106,18 @@
       margin-bottom: 0.7rem;
       color: #3AA14F;
       text-shadow: 0 0 6px #a8ffb0aa;
-      user-select: none;
     }
 
     label {
       display: block;
       margin-bottom: 0.6rem;
       cursor: pointer;
-      user-select: none;
     }
 
     input[type="radio"] {
       margin-right: 0.5rem;
       transform: scale(1.15);
       vertical-align: middle;
-      cursor: pointer;
     }
 
     button {
@@ -132,29 +150,28 @@
       font-size: 1.3rem;
       font-weight: bold;
       box-shadow: 0 0 15px #a8ffb0cc;
-      user-select: none;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
   </style>
 </head>
-
 <body>
   <header>Slytherin House Quiz</header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="gryffindor-quiz.html">Gryffindor Quiz</a>
-    <a href="hufflepuff-quiz.html">Hufflepuff Quiz</a>
-    <a href="ravenclaw-quiz.html">Ravenclaw Quiz</a>
-    <a href="slytherin-quiz.html">Slytherin Quiz</a>
+    <a href="#">Home</a>
+    <a href="#">Gryffindor Quiz</a>
+    <a href="#">Hufflepuff Quiz</a>
+    <a href="#">Ravenclaw Quiz</a>
+    <a href="#">Slytherin Quiz</a>
   </nav>
 
   <main>
     <h1>Are You a True Slytherin?</h1>
 
-    <form id="quiz-form">
+    <form id="quiz-form" novalidate>
+      <!-- Question 1 -->
       <div class="question" tabindex="0">
         <p>1. Which trait do you value most?</p>
         <label><input type="radio" name="q1" value="1" required> Ambition</label>
@@ -163,6 +180,7 @@
         <label><input type="radio" name="q1" value="0"> Wisdom</label>
       </div>
 
+      <!-- Question 2 -->
       <div class="question" tabindex="0">
         <p>2. How do you achieve your goals?</p>
         <label><input type="radio" name="q2" value="1" required> With cunning and planning</label>
@@ -171,6 +189,7 @@
         <label><input type="radio" name="q2" value="0"> By studying hard</label>
       </div>
 
+      <!-- Question 3 -->
       <div class="question" tabindex="0">
         <p>3. What is your leadership style?</p>
         <label><input type="radio" name="q3" value="1" required> Strategic and persuasive</label>
@@ -179,6 +198,7 @@
         <label><input type="radio" name="q3" value="0"> Analytical and logical</label>
       </div>
 
+      <!-- Question 4 -->
       <div class="question" tabindex="0">
         <p>4. Your ideal magical pet?</p>
         <label><input type="radio" name="q4" value="1" required> Snake</label>
@@ -187,6 +207,7 @@
         <label><input type="radio" name="q4" value="0"> Raven</label>
       </div>
 
+      <!-- Question 5 -->
       <div class="question" tabindex="0">
         <p>5. How do you react when faced with a challenge?</p>
         <label><input type="radio" name="q5" value="1" required> Look for the smartest way around it</label>
@@ -195,6 +216,7 @@
         <label><input type="radio" name="q5" value="0"> Research and prepare thoroughly</label>
       </div>
 
+      <!-- Question 6 -->
       <div class="question" tabindex="0">
         <p>6. Which Hogwarts subject appeals most?</p>
         <label><input type="radio" name="q6" value="1" required> Potions</label>
@@ -203,6 +225,7 @@
         <label><input type="radio" name="q6" value="0"> Charms</label>
       </div>
 
+      <!-- Question 7 -->
       <div class="question" tabindex="0">
         <p>7. What motivates you?</p>
         <label><input type="radio" name="q7" value="1" required> Success and influence</label>
@@ -211,6 +234,7 @@
         <label><input type="radio" name="q7" value="0"> Knowledge and wisdom</label>
       </div>
 
+      <!-- Question 8 -->
       <div class="question" tabindex="0">
         <p>8. How do you view rules?</p>
         <label><input type="radio" name="q8" value="1" required> Guidelines to be cleverly navigated</label>
@@ -219,6 +243,7 @@
         <label><input type="radio" name="q8" value="0"> Essential for order</label>
       </div>
 
+      <!-- Question 9 -->
       <div class="question" tabindex="0">
         <p>9. Which phrase describes you best?</p>
         <label><input type="radio" name="q9" value="1" required> "I do what I must to succeed."</label>
@@ -227,6 +252,7 @@
         <label><input type="radio" name="q9" value="0"> "Knowledge is power."</label>
       </div>
 
+      <!-- Question 10 -->
       <div class="question" tabindex="0">
         <p>10. Your favorite place at Hogwarts?</p>
         <label><input type="radio" name="q10" value="1" required> The dungeons</label>
@@ -250,9 +276,24 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       let score = 0;
+      let unanswered = false;
+
       for (let i = 1; i <= 10; i++) {
-        score += parseInt(form['q' + i].value);
+        const selected = form.querySelector(`input[name="q${i}"]:checked`);
+        if (!selected) {
+          unanswered = true;
+          break;
+        }
+        score += parseInt(selected.value);
       }
+
+      if (unanswered) {
+        resultDiv.textContent = "Please answer all the questions before submitting!";
+        resultDiv.style.color = "#ffcccc";
+        return;
+      }
+
+      resultDiv.style.color = "#0B3D0B";
 
       let message = "";
       if (score >= 8) {
