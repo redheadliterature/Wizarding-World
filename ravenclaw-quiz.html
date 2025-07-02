@@ -11,29 +11,26 @@
   <style>
     body {
       font-family: 'Adobe Thai', sans-serif;
-      background: linear-gradient(135deg, #001f4d, #0d0d26);
+      background: linear-gradient(135deg, #001f4d, #1e1e1e);
       color: #cd7f32;
       margin: 0;
       padding: 0;
     }
 
     header, nav, footer {
-      background-color: rgba(0, 31, 77, 0.9);
+      background-color: rgba(0, 31, 77, 0.95);
       color: #cd7f32;
       box-shadow: 0 0 15px #cd7f32;
       padding: 1rem;
       text-align: center;
-      font-size: 1.5rem;
-      text-shadow: 0 0 5px #cd7f32;
     }
 
     nav a {
       color: #cd7f32;
-      margin: 0 12px;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
       position: relative;
-      transition: color 0.3s ease;
     }
 
     nav a::after {
@@ -42,8 +39,8 @@
       width: 100%;
       height: 2px;
       background: #cd7f32;
-      left: 0;
       bottom: -4px;
+      left: 0;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
@@ -58,7 +55,7 @@
       padding: 2rem;
       max-width: 800px;
       margin: 2rem auto;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 25px #cd7f32;
     }
 
@@ -66,76 +63,82 @@
       text-align: center;
       margin-bottom: 2rem;
       color: #cd7f32;
-      text-shadow: 0 0 8px #cd7f32;
+      font-size: 2.5rem;
+      text-shadow: 0 0 8px #cd7f32aa;
     }
 
     .question {
-      background-color: rgba(205, 127, 50, 0.08);
+      background-color: rgba(205, 127, 50, 0.1);
       border: 2px solid #cd7f32;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
       transition: box-shadow 0.3s ease;
+      box-shadow: inset 0 0 10px #cd7f3266;
     }
 
-    .question:hover {
-      box-shadow: 0 0 12px #cd7f32;
+    .question:hover,
+    .question:focus-within {
+      box-shadow: 0 0 20px #cd7f32cc, inset 0 0 12px #cd7f32aa;
     }
 
     .question p {
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
     }
 
     label {
       display: block;
       margin-bottom: 0.5rem;
       cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    label:hover {
-      color: #ffd699;
     }
 
     input[type="radio"] {
       margin-right: 0.5rem;
+      transform: scale(1.2);
+      cursor: pointer;
     }
 
-    button {
-      display: block;
+    button[type="submit"] {
       background-color: #cd7f32;
       color: #001f4d;
       border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
+      padding: 15px 30px;
       font-weight: bold;
+      font-size: 1.1rem;
       cursor: pointer;
-      border-radius: 5px;
-      margin: 2rem auto 0 auto;
-      box-shadow: 0 0 15px #cd7f32;
-      transition: background-color 0.3s, transform 0.2s;
+      border-radius: 6px;
+      margin: 2rem auto 0;
+      display: block;
+      box-shadow: 0 0 10px #cd7f32;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    button:hover {
-      background-color: #b26b29;
+    button[type="submit"]:hover {
+      background-color: #b66a29;
       transform: scale(1.05);
     }
 
     #result {
       margin-top: 2rem;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       background-color: #cd7f32;
       color: #001f4d;
-      text-align: center;
+      box-shadow: 0 0 15px #001f4d;
       border-radius: 8px;
-      font-size: 1.2rem;
       font-weight: bold;
-      box-shadow: 0 0 12px #001f4d;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
   <header>Ravenclaw House Quiz</header>
 
@@ -151,17 +154,85 @@
     <h1>Are You a True Ravenclaw?</h1>
 
     <form id="quiz-form">
-      <!-- Keep your original quiz questions here (unchanged) -->
-      <!-- Example Question (repeat for all): -->
       <div class="question">
-        <p>1. What is most important to you?</p>
-        <label><input type="radio" name="q1" value="1" required> Wisdom and knowledge</label>
-        <label><input type="radio" name="q1" value="0"> Ambition</label>
+        <p>1. What do you value most?</p>
+        <label><input type="radio" name="q1" value="1" required> Intelligence</label>
         <label><input type="radio" name="q1" value="0"> Bravery</label>
         <label><input type="radio" name="q1" value="0"> Loyalty</label>
+        <label><input type="radio" name="q1" value="0"> Ambition</label>
       </div>
 
-      <!-- Repeat question blocks for q2–q10 as in your original code -->
+      <div class="question">
+        <p>2. How do you approach problems?</p>
+        <label><input type="radio" name="q2" value="1" required> With logic and creativity</label>
+        <label><input type="radio" name="q2" value="0"> Boldly and directly</label>
+        <label><input type="radio" name="q2" value="0"> Through teamwork</label>
+        <label><input type="radio" name="q2" value="0"> With calculated strategy</label>
+      </div>
+
+      <div class="question">
+        <p>3. Your favorite place to study?</p>
+        <label><input type="radio" name="q3" value="1" required> A quiet, sunlit library</label>
+        <label><input type="radio" name="q3" value="0"> A noisy common room</label>
+        <label><input type="radio" name="q3" value="0"> Outdoors</label>
+        <label><input type="radio" name="q3" value="0"> At night by candlelight</label>
+      </div>
+
+      <div class="question">
+        <p>4. What magical creature fascinates you?</p>
+        <label><input type="radio" name="q4" value="1" required> Owl</label>
+        <label><input type="radio" name="q4" value="0"> Hippogriff</label>
+        <label><input type="radio" name="q4" value="0"> Phoenix</label>
+        <label><input type="radio" name="q4" value="0"> Basilisk</label>
+      </div>
+
+      <div class="question">
+        <p>5. What do you admire in others?</p>
+        <label><input type="radio" name="q5" value="1" required> Curiosity</label>
+        <label><input type="radio" name="q5" value="0"> Courage</label>
+        <label><input type="radio" name="q5" value="0"> Loyalty</label>
+        <label><input type="radio" name="q5" value="0"> Confidence</label>
+      </div>
+
+      <div class="question">
+        <p>6. What’s your favorite Hogwarts subject?</p>
+        <label><input type="radio" name="q6" value="1" required> Astronomy</label>
+        <label><input type="radio" name="q6" value="0"> Defense Against the Dark Arts</label>
+        <label><input type="radio" name="q6" value="0"> Herbology</label>
+        <label><input type="radio" name="q6" value="0"> Potions</label>
+      </div>
+
+      <div class="question">
+        <p>7. How do you handle mistakes?</p>
+        <label><input type="radio" name="q7" value="1" required> Learn from them and adapt</label>
+        <label><input type="radio" name="q7" value="0"> Blame yourself</label>
+        <label><input type="radio" name="q7" value="0"> Avoid them at all costs</label>
+        <label><input type="radio" name="q7" value="0"> Try again quickly</label>
+      </div>
+
+      <div class="question">
+        <p>8. Which trait best describes you?</p>
+        <label><input type="radio" name="q8" value="1" required> Inquisitive</label>
+        <label><input type="radio" name="q8" value="0"> Fearless</label>
+        <label><input type="radio" name="q8" value="0"> Friendly</label>
+        <label><input type="radio" name="q8" value="0"> Strategic</label>
+      </div>
+
+      <div class="question">
+        <p>9. How do you spend free time?</p>
+        <label><input type="radio" name="q9" value="1" required> Reading or solving puzzles</label>
+        <label><input type="radio" name="q9" value="0"> Practicing spells</label>
+        <label><input type="radio" name="q9" value="0"> Hanging out with friends</label>
+        <label><input type="radio" name="q9" value="0"> Planning next steps</label>
+      </div>
+
+      <div class="question">
+        <p>10. What kind of friend are you?</p>
+        <label><input type="radio" name="q10" value="1" required> Thoughtful and insightful</label>
+        <label><input type="radio" name="q10" value="0"> Protective and daring</label>
+        <label><input type="radio" name="q10" value="0"> Loyal and caring</label>
+        <label><input type="radio" name="q10" value="0"> Clever and bold</label>
+      </div>
 
       <button type="submit">See Your Result</button>
     </form>
@@ -175,7 +246,7 @@
     const form = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
       let score = 0;
       for (let i = 1; i <= 10; i++) {
@@ -184,11 +255,11 @@
 
       let message = "";
       if (score >= 8) {
-        message = "You are a TRUE Ravenclaw! Intelligent, creative, and wise.";
+        message = "You are a TRUE Ravenclaw! Wise, curious, and sharp-minded.";
       } else if (score >= 5) {
-        message = "You have many Ravenclaw traits—keep seeking knowledge!";
+        message = "You show many Ravenclaw qualities — thoughtful and original.";
       } else {
-        message = "You may not be a full Ravenclaw, but curiosity is the first step to wisdom!";
+        message = "You may not be a classic Ravenclaw, but your mind holds great potential.";
       }
 
       resultDiv.textContent = message;
