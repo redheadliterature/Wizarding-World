@@ -20,7 +20,7 @@
     header, nav, footer {
       background-color: rgba(236, 185, 57, 0.85);
       color: #000000;
-      box-shadow: 0 0 15px #000000;
+      box-shadow: 0 0 15px #ecb939;
       padding: 1rem;
       text-align: center;
       font-size: 1.5rem;
@@ -31,6 +31,12 @@
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffef7a;
+      text-shadow: 0 0 10px #ffef7a;
     }
 
     main {
@@ -46,29 +52,52 @@
       text-align: center;
       margin-bottom: 2rem;
       color: #000000;
+      text-shadow: 0 0 10px #f5e663;
     }
 
     .question {
-      background-color: rgba(0, 0, 0, 0.05);
-      border: 2px solid #000000;
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 1.2rem 1.5rem;
       margin-bottom: 1.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow:
+        0 0 8px 3px #00000088,
+        inset 0 0 10px 3px #f5d94b99;
+      border: 2px solid #000000cc;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .question:hover,
+    .question:focus-within,
+    .question:focus {
+      box-shadow:
+        0 0 22px 8px #ffef7add,
+        inset 0 0 18px 8px #fff9b0cc;
+      transform: scale(1.02);
+      outline: none;
     }
 
     .question p {
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
+      color: #000000;
+      text-shadow: 0 0 6px #f5e663cc;
+      user-select: none;
     }
 
     label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       cursor: pointer;
+      user-select: none;
     }
 
     input[type="radio"] {
       margin-right: 0.5rem;
+      transform: scale(1.15);
+      vertical-align: middle;
+      cursor: pointer;
     }
 
     button {
@@ -77,28 +106,34 @@
       color: #ecb939;
       border: none;
       padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 8px;
       margin: 2rem auto 0 auto;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 12px #ecb939bb;
     }
 
     button:hover {
-      background-color: #333333;
+      background-color: #222222;
+      box-shadow: 0 0 20px #fff176cc;
     }
 
     #result {
       margin-top: 2rem;
-      padding: 1rem;
+      padding: 1.2rem;
       background-color: #000000;
       color: #ecb939;
       text-align: center;
-      border-radius: 8px;
-      font-size: 1.2rem;
+      border-radius: 10px;
+      font-size: 1.3rem;
       font-weight: bold;
-      box-shadow: 0 0 10px #ecb939;
+      box-shadow: 0 0 15px #ecb939cc;
+      user-select: none;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -118,7 +153,7 @@
     <h1>Are You a True Hufflepuff?</h1>
 
     <form id="quiz-form">
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>1. What matters most to you?</p>
         <label><input type="radio" name="q1" value="1" required> Loyalty and kindness</label>
         <label><input type="radio" name="q1" value="0"> Ambition</label>
@@ -126,7 +161,7 @@
         <label><input type="radio" name="q1" value="0"> Intelligence</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>2. How do you prefer to spend your free time?</p>
         <label><input type="radio" name="q2" value="1" required> Helping friends or volunteering</label>
         <label><input type="radio" name="q2" value="0"> Practicing spells</label>
@@ -134,7 +169,7 @@
         <label><input type="radio" name="q2" value="0"> Competing or challenging others</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>3. What is your greatest strength?</p>
         <label><input type="radio" name="q3" value="1" required> Patience</label>
         <label><input type="radio" name="q3" value="0"> Bravery</label>
@@ -142,7 +177,7 @@
         <label><input type="radio" name="q3" value="0"> Ambition</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>4. Which magical creature do you feel closest to?</p>
         <label><input type="radio" name="q4" value="1" required> Niffler</label>
         <label><input type="radio" name="q4" value="0"> Phoenix</label>
@@ -150,7 +185,7 @@
         <label><input type="radio" name="q4" value="0"> Owl</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>5. What do you admire most in others?</p>
         <label><input type="radio" name="q5" value="1" required> Hard work and fairness</label>
         <label><input type="radio" name="q5" value="0"> Power</label>
@@ -158,7 +193,7 @@
         <label><input type="radio" name="q5" value="0"> Courage</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>6. How do you handle challenges?</p>
         <label><input type="radio" name="q6" value="1" required> With patience and persistence</label>
         <label><input type="radio" name="q6" value="0"> By facing them head-on</label>
@@ -166,7 +201,7 @@
         <label><input type="radio" name="q6" value="0"> By using strategy</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>7. Your favorite class at Hogwarts?</p>
         <label><input type="radio" name="q7" value="1" required> Herbology</label>
         <label><input type="radio" name="q7" value="0"> Defense Against the Dark Arts</label>
@@ -174,7 +209,7 @@
         <label><input type="radio" name="q7" value="0"> History of Magic</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>8. How do you prefer to make decisions?</p>
         <label><input type="radio" name="q8" value="1" required> By thinking about how it affects others</label>
         <label><input type="radio" name="q8" value="0"> Quickly and boldly</label>
@@ -182,7 +217,7 @@
         <label><input type="radio" name="q8" value="0"> By strategizing to get ahead</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>9. Which trait describes you best?</p>
         <label><input type="radio" name="q9" value="1" required> Fair and just</label>
         <label><input type="radio" name="q9" value="0"> Bold and daring</label>
@@ -190,7 +225,7 @@
         <label><input type="radio" name="q9" value="0"> Ambitious</label>
       </div>
 
-      <div class="question">
+      <div class="question" tabindex="0">
         <p>10. What kind of friend are you?</p>
         <label><input type="radio" name="q10" value="1" required> Supportive and dependable</label>
         <label><input type="radio" name="q10" value="0"> Bold and protective</label>
