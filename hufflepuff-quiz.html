@@ -11,15 +11,15 @@
   <style>
     body {
       font-family: 'Adobe Thai', sans-serif;
-      background: linear-gradient(135deg, #ecb939, #000000);
-      color: #000000;
+      background-color: #000000;
+      color: #ecb939;
       margin: 0;
       padding: 0;
     }
 
     header, nav, footer {
-      background-color: rgba(236, 185, 57, 0.85);
-      color: #000000;
+      background-color: #000000;
+      color: #ecb939;
       box-shadow: 0 0 15px #ecb939;
       padding: 1rem;
       text-align: center;
@@ -27,7 +27,7 @@
     }
 
     nav a {
-      color: #000000;
+      color: #ecb939;
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
@@ -35,35 +35,35 @@
     }
 
     nav a:hover {
-      color: #ffef7a;
-      text-shadow: 0 0 10px #ffef7a;
+      color: #fff176;
+      text-shadow: 0 0 10px #fff176;
     }
 
     main {
-      background-color: rgba(236, 185, 57, 0.9);
+      background-color: #000000;
       padding: 2rem;
       max-width: 800px;
       margin: auto;
       border-radius: 10px;
-      box-shadow: 0 0 20px #000000;
+      box-shadow: 0 0 20px #ecb939aa;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 2rem;
-      color: #000000;
-      text-shadow: 0 0 10px #f5e663;
+      color: #ecb939;
+      text-shadow: 0 0 10px #fff176cc;
     }
 
     .question {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(236, 185, 57, 0.05);
       padding: 1.2rem 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: 12px;
       box-shadow:
-        0 0 8px 3px #00000088,
-        inset 0 0 10px 3px #f5d94b99;
-      border: 2px solid #000000cc;
+        0 0 8px 3px #ecb93955,
+        inset 0 0 10px 3px #ecb93933;
+      border: 2px solid #ecb939cc;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       cursor: pointer;
     }
@@ -72,7 +72,7 @@
     .question:focus-within,
     .question:focus {
       box-shadow:
-        0 0 22px 8px #ffef7add,
+        0 0 22px 8px #fff176cc,
         inset 0 0 18px 8px #fff9b0cc;
       transform: scale(1.02);
       outline: none;
@@ -81,8 +81,8 @@
     .question p {
       font-weight: bold;
       margin-bottom: 0.7rem;
-      color: #000000;
-      text-shadow: 0 0 6px #f5e663cc;
+      color: #ecb939;
+      text-shadow: 0 0 6px #fff176aa;
       user-select: none;
     }
 
@@ -102,8 +102,8 @@
 
     button {
       display: block;
-      background-color: #000000;
-      color: #ecb939;
+      background-color: #ecb939;
+      color: #000000;
       border: none;
       padding: 0.75rem 1.5rem;
       font-size: 1.1rem;
@@ -112,24 +112,24 @@
       border-radius: 8px;
       margin: 2rem auto 0 auto;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 12px #ecb939bb;
+      box-shadow: 0 0 12px #fff17699;
     }
 
     button:hover {
-      background-color: #222222;
+      background-color: #f5e663;
       box-shadow: 0 0 20px #fff176cc;
     }
 
     #result {
       margin-top: 2rem;
       padding: 1.2rem;
-      background-color: #000000;
-      color: #ecb939;
+      background-color: #ecb939;
+      color: #000000;
       text-align: center;
       border-radius: 10px;
       font-size: 1.3rem;
       font-weight: bold;
-      box-shadow: 0 0 15px #ecb939cc;
+      box-shadow: 0 0 15px #fff176cc;
       user-select: none;
       max-width: 600px;
       margin-left: auto;
@@ -236,10 +236,10 @@
       <button type="submit">See Your Result</button>
     </form>
 
-    <div id="result"></div>
+    <div id="result" aria-live="polite"></div>
   </main>
 
-  <footer>&copy; 2025 Wizarding World Fan Site</footer>
+  <footer>© 2025 Wizarding World Fan Site</footer>
 
   <script>
     const form = document.getElementById('quiz-form');
